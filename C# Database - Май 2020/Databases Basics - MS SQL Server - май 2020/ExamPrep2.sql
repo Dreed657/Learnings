@@ -1,0 +1,60 @@
+CREATE DATABASE School;
+
+CREATE TABLE Students 
+(
+	[Id] INT IDENTITY PRIMARY KEY NOT NULL,
+	[FirstName] NVARCHAR(30) NOT NULL,
+	[MiddleName] NVARCHAR(25),
+	[LastName] NVARCHAR(30) NOT NULL,
+	[Age] INT NOT NULL,
+	[Address] NVARCHAR(50),
+	[Phone] NVARCHAR(10)
+);
+
+CREATE TABLE Subjects 
+(
+	[Id] INT IDENTITY PRIMARY KEY NOT NULL,
+	[Name] NVARCHAR(20) NOT NULL,
+	[Lessons] INT CHECK(Lessons > 0) NOT NULL
+);
+
+CREATE TABLE StudentsSubjects
+(
+	[Id] INT IDENTITY PRIMARY KEY NOT NULL,
+	[StudentId] INT NOT NULL FOREIGN KEY REFERENCES Students(Id),
+	[SubjectId] INT NOT NULL FOREIGN KEY REFERENCES Subjects(Id),
+	[Grade] DECIMAL(18,2) NOT NULL
+);
+
+CREATE TABLE Exams
+(
+	[Id] INT IDENTITY PRIMARY KEY NOT NULL,
+	[Date] DATETIME,
+	[SubjectId] INT NOT NULL FOREIGN KEY REFERENCES Subjects(Id)
+);
+
+CREATE TABLE StudentsExams
+(
+	[StudentId] INT NOT NULL FOREIGN KEY REFERENCES Students(Id),
+	[ExamId] INT NOT NULL FOREIGN KEY REFERENCES Exams(Id),
+	[Grade] DECIMAL(18,2) NOT NULL 
+);
+
+CREATE TABLE Teachers
+(
+	[Id] INT IDENTITY PRIMARY KEY NOT NULL,
+	[FirstName] NVARCHAR(20) NOT NULL,
+	[LastName] NVARCHAR(20) NOT NULL,
+	[Address] NVARCHAR(20) NOT NULL,
+	[Phone] VARCHAR(10),
+	[SubjectId] INT NOT NULL FOREIGN KEY REFERENCES Subjects(Id)
+);
+
+CREATE TABLE StudentsTeachers
+(
+	[StudentId] INT NOT NULL FOREIGN KEY REFERENCES Students(Id),
+	[TeacherId] INT NOT NULL FOREIGN KEY REFERENCES Teachers(Id)
+);
+
+DROP TABLE StudentsTeachers, StudentsExams, StudentsSubjects, 
+	Exams, Teachers, Subjects, Students;
