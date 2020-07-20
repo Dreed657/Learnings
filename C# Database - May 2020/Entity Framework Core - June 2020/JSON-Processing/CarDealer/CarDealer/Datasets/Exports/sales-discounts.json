@@ -1,0 +1,112 @@
+[
+  {
+    "car": {
+      "Make": "Skoda",
+      "Model": "Fabia",
+      "TravelledDistance": 57662452
+    },
+    "customerName": "Daniele Zarate",
+    "Discount": "30.00",
+    "price": "3086.73",
+    "priceWithDiscount": "2160.71"
+  },
+  {
+    "car": {
+      "Make": "Fiat",
+      "Model": "500L",
+      "TravelledDistance": 450106773
+    },
+    "customerName": "Jimmy Grossi",
+    "Discount": "20.00",
+    "price": "2232.33",
+    "priceWithDiscount": "1785.86"
+  },
+  {
+    "car": {
+      "Make": "Toyota",
+      "Model": "Camry Hybrid",
+      "TravelledDistance": 151868293
+    },
+    "customerName": "Brett Brickley",
+    "Discount": "40.00",
+    "price": "2969.99",
+    "priceWithDiscount": "1781.99"
+  },
+  {
+    "car": {
+      "Make": "Citroen",
+      "Model": "C1",
+      "TravelledDistance": 389207601
+    },
+    "customerName": "Daniele Zarate",
+    "Discount": "30.00",
+    "price": "4382.32",
+    "priceWithDiscount": "3067.62"
+  },
+  {
+    "car": {
+      "Make": "Citroen",
+      "Model": "C1",
+      "TravelledDistance": 498211182
+    },
+    "customerName": "Carri Knapik",
+    "Discount": "0.00",
+    "price": "382.96",
+    "priceWithDiscount": "382.96"
+  },
+  {
+    "car": {
+      "Make": "Opel",
+      "Model": "Insignia",
+      "TravelledDistance": 225253817
+    },
+    "customerName": "Donnetta Soliz",
+    "Discount": "40.00",
+    "price": "6874.65",
+    "priceWithDiscount": "4124.79"
+  },
+  {
+    "car": {
+      "Make": "Renault",
+      "Model": "Alaskan",
+      "TravelledDistance": 17909035
+    },
+    "customerName": "Rema Revelle",
+    "Discount": "40.00",
+    "price": "335.38",
+    "priceWithDiscount": "201.23"
+  },
+  {
+    "car": {
+      "Make": "Ferrari",
+      "Model": "F430",
+      "TravelledDistance": 397106659
+    },
+    "customerName": "Marcelle Griego",
+    "Discount": "50.00",
+    "price": "1639.32",
+    "priceWithDiscount": "819.66"
+  },
+  {
+    "car": {
+      "Make": "Renault",
+      "Model": "Duster",
+      "TravelledDistance": 451149098
+    },
+    "customerName": "Louann Holzworth",
+    "Discount": "10.00",
+    "price": "1205.32",
+    "priceWithDiscount": "1084.79"
+  },
+  {
+    "car": {
+      "Make": "Mercedes",
+      "Model": "A 160",
+      "TravelledDistance": 69932764
+    },
+    "customerName": "Hipolito Lamoreaux",
+    "Discount": "50.00",
+    "price": "1925.93",
+    "priceWithDiscount": "962.97"
+  }
+]
