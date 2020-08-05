@@ -28,6 +28,8 @@ namespace Models
         public virtual BuildingType BuildingType { get; set; }
 
         public int Price { get; set; }
+        
+        public string Url { get; set; }
 
         public virtual ICollection<RealEstatePropertyTag> Tags { get; set; } = new HashSet<RealEstatePropertyTag>();
     }

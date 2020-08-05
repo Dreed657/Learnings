@@ -17,5 +17,7 @@
         public string BuildingType { get; set; }
 
         public int Price { get; set; }
+
+        public string Url { get; set; }
     }
 }

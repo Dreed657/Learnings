@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Customers>
   <Customer FirstName="Marjy" LastName="Starbeck">
-    <SpentMoney>82.65</SpentMoney>
-    <SpentTime>15:46:00</SpentTime>
+    <SpentMoney>165.30</SpentMoney>
+    <SpentTime>07:32:00</SpentTime>
   </Customer>
   <Customer FirstName="Jerrie" LastName="O\'Carroll">
-    <SpentMoney>67.13</SpentMoney>
-    <SpentTime>14:08:00</SpentTime>
+    <SpentMoney>134.26</SpentMoney>
+    <SpentTime>04:16:00</SpentTime>
   </Customer>
   <Customer FirstName="Randi" LastName="Ferraraccio">
-    <SpentMoney>63.39</SpentMoney>
-    <SpentTime>17:42:00</SpentTime>
+    <SpentMoney>126.78</SpentMoney>
+    <SpentTime>11:24:00</SpentTime>
   </Customer>
   <Customer FirstName="Duff" LastName="Honig">
-    <SpentMoney>59.65</SpentMoney>
-    <SpentTime>14:51:00</SpentTime>
+    <SpentMoney>119.30</SpentMoney>
+    <SpentTime>05:42:00</SpentTime>
   </Customer>
   <Customer FirstName="Henrie" LastName="Jurges">
-    <SpentMoney>53.13</SpentMoney>
-    <SpentTime>10:22:00</SpentTime>
+    <SpentMoney>106.26</SpentMoney>
+    <SpentTime>20:44:00</SpentTime>
   </Customer>
   <Customer FirstName="Bruno" LastName="Doone">
-    <SpentMoney>45.13</SpentMoney>
-    <SpentTime>04:24:00</SpentTime>
+    <SpentMoney>90.26</SpentMoney>
+    <SpentTime>08:48:00</SpentTime>
   </Customer>
   <Customer FirstName="Garry" LastName="Blackeby">
-    <SpentMoney>42.13</SpentMoney>
-    <SpentTime>08:08:00</SpentTime>
+    <SpentMoney>84.26</SpentMoney>
+    <SpentTime>16:16:00</SpentTime>
   </Customer>
   <Customer FirstName="Bondy" LastName="Linsay">
-    <SpentMoney>39.26</SpentMoney>
-    <SpentTime>10:24:00</SpentTime>
+    <SpentMoney>78.52</SpentMoney>
+    <SpentTime>20:48:00</SpentTime>
   </Customer>
   <Customer FirstName="Belinda" LastName="Fraanchyonok">
-    <SpentMoney>34.13</SpentMoney>
-    <SpentTime>07:03:00</SpentTime>
+    <SpentMoney>68.26</SpentMoney>
+    <SpentTime>14:06:00</SpentTime>
   </Customer>
   <Customer FirstName="Tibold" LastName="Briztman">
-    <SpentMoney>34.13</SpentMoney>
-    <SpentTime>08:06:00</SpentTime>
+    <SpentMoney>68.26</SpentMoney>
+    <SpentTime>16:12:00</SpentTime>
   </Customer>
 </Customers>

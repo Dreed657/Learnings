@@ -2,8 +2,28 @@
   {
     "MovieName": "SIS",
     "Rating": "10.00",
-    "TotalIncomes": "104.52",
+    "TotalIncomes": "209.04",
     "Customers": [
+      {
+        "FirstName": "Jerrie",
+        "LastName": "O\\'Carroll",
+        "Balance": "306.90"
+      },
+      {
+        "FirstName": "Jerrie",
+        "LastName": "O\\'Carroll",
+        "Balance": "306.90"
+      },
+      {
+        "FirstName": "Jerrie",
+        "LastName": "O\\'Carroll",
+        "Balance": "306.90"
+      },
+      {
+        "FirstName": "Jerrie",
+        "LastName": "O\\'Carroll",
+        "Balance": "306.90"
+      },
       {
         "FirstName": "Jerrie",
         "LastName": "O\\'Carroll",
@@ -30,6 +50,11 @@
         "Balance": "296.44"
       },
       {
+        "FirstName": "Rhoda",
+        "LastName": "Haysom",
+        "Balance": "296.44"
+      },
+      {
         "FirstName": "Marjy",
         "LastName": "Starbeck",
         "Balance": "264.20"
@@ -38,6 +63,31 @@
         "FirstName": "Marjy",
         "LastName": "Starbeck",
         "Balance": "264.20"
+      },
+      {
+        "FirstName": "Marjy",
+        "LastName": "Starbeck",
+        "Balance": "264.20"
+      },
+      {
+        "FirstName": "Marjy",
+        "LastName": "Starbeck",
+        "Balance": "264.20"
+      },
+      {
+        "FirstName": "Allayne",
+        "LastName": "Yankishin",
+        "Balance": "125.25"
+      },
+      {
+        "FirstName": "Allayne",
+        "LastName": "Yankishin",
+        "Balance": "125.25"
+      },
+      {
+        "FirstName": "Allayne",
+        "LastName": "Yankishin",
+        "Balance": "125.25"
       },
       {
         "FirstName": "Allayne",
@@ -59,7 +109,7 @@
   {
     "MovieName": "Gui Si (Silk)",
     "Rating": "9.00",
-    "TotalIncomes": "171.91",
+    "TotalIncomes": "343.82",
     "Customers": [
       {
         "FirstName": "Duff",
@@ -77,6 +127,36 @@
         "Balance": "82.17"
       },
       {
+        "FirstName": "Duff",
+        "LastName": "Honig",
+        "Balance": "82.17"
+      },
+      {
+        "FirstName": "Duff",
+        "LastName": "Honig",
+        "Balance": "82.17"
+      },
+      {
+        "FirstName": "Duff",
+        "LastName": "Honig",
+        "Balance": "82.17"
+      },
+      {
+        "FirstName": "Etty",
+        "LastName": "Stockow",
+        "Balance": "372.02"
+      },
+      {
+        "FirstName": "Etty",
+        "LastName": "Stockow",
+        "Balance": "372.02"
+      },
+      {
+        "FirstName": "Etty",
+        "LastName": "Stockow",
+        "Balance": "372.02"
+      },
+      {
         "FirstName": "Etty",
         "LastName": "Stockow",
         "Balance": "372.02"
@@ -102,6 +182,21 @@
         "Balance": "23.50"
       },
       {
+        "FirstName": "Janet",
+        "LastName": "Matchett",
+        "Balance": "23.50"
+      },
+      {
+        "FirstName": "Janet",
+        "LastName": "Matchett",
+        "Balance": "23.50"
+      },
+      {
+        "FirstName": "Caralie",
+        "LastName": "Longthorn",
+        "Balance": "169.18"
+      },
+      {
         "FirstName": "Caralie",
         "LastName": "Longthorn",
         "Balance": "169.18"
@@ -112,6 +207,16 @@
         "Balance": "169.18"
       },
       {
+        "FirstName": "Caralie",
+        "LastName": "Longthorn",
+        "Balance": "169.18"
+      },
+      {
+        "FirstName": "Belinda",
+        "LastName": "Fraanchyonok",
+        "Balance": "14.69"
+      },
+      {
         "FirstName": "Belinda",
         "LastName": "Fraanchyonok",
         "Balance": "14.69"
@@ -125,6 +230,26 @@
         "FirstName": "Belinda",
         "LastName": "Fraanchyonok",
         "Balance": "14.69"
+      },
+      {
+        "FirstName": "Belinda",
+        "LastName": "Fraanchyonok",
+        "Balance": "14.69"
+      },
+      {
+        "FirstName": "Belinda",
+        "LastName": "Fraanchyonok",
+        "Balance": "14.69"
+      },
+      {
+        "FirstName": "Merle",
+        "LastName": "Pinnell",
+        "Balance": "133.05"
+      },
+      {
+        "FirstName": "Merle",
+        "LastName": "Pinnell",
+        "Balance": "133.05"
       },
       {
         "FirstName": "Merle",
@@ -140,14 +265,29 @@
         "FirstName": "Arluene",
         "LastName": "Farman",
         "Balance": "118.33"
+      },
+      {
+        "FirstName": "Arluene",
+        "LastName": "Farman",
+        "Balance": "118.33"
       }
     ]
   },
   {
     "MovieName": "Host, The (Gwoemul)",
     "Rating": "9.00",
-    "TotalIncomes": "22.00",
+    "TotalIncomes": "44.00",
     "Customers": [
+      {
+        "FirstName": "Elmo",
+        "LastName": "Mehew",
+        "Balance": "13.14"
+      },
+      {
+        "FirstName": "Elmo",
+        "LastName": "Mehew",
+        "Balance": "13.14"
+      },
       {
         "FirstName": "Elmo",
         "LastName": "Mehew",
@@ -163,7 +303,7 @@
   {
     "MovieName": "Fahrenhype 9/11",
     "Rating": "8.00",
-    "TotalIncomes": "216.69",
+    "TotalIncomes": "433.38",
     "Customers": [
       {
         "FirstName": "Trudi",
@@ -176,6 +316,31 @@
         "Balance": "88.47"
       },
       {
+        "FirstName": "Trudi",
+        "LastName": "Whitlock",
+        "Balance": "88.47"
+      },
+      {
+        "FirstName": "Trudi",
+        "LastName": "Whitlock",
+        "Balance": "88.47"
+      },
+      {
+        "FirstName": "Duff",
+        "LastName": "Honig",
+        "Balance": "82.17"
+      },
+      {
+        "FirstName": "Duff",
+        "LastName": "Honig",
+        "Balance": "82.17"
+      },
+      {
+        "FirstName": "Duff",
+        "LastName": "Honig",
+        "Balance": "82.17"
+      },
+      {
         "FirstName": "Duff",
         "LastName": "Honig",
         "Balance": "82.17"
@@ -199,6 +364,26 @@
         "FirstName": "Timoteo",
         "LastName": "Achromov",
         "Balance": "319.59"
+      },
+      {
+        "FirstName": "Timoteo",
+        "LastName": "Achromov",
+        "Balance": "319.59"
+      },
+      {
+        "FirstName": "Timoteo",
+        "LastName": "Achromov",
+        "Balance": "319.59"
+      },
+      {
+        "FirstName": "Jerrie",
+        "LastName": "O\\'Carroll",
+        "Balance": "306.90"
+      },
+      {
+        "FirstName": "Jerrie",
+        "LastName": "O\\'Carroll",
+        "Balance": "306.90"
       },
       {
         "FirstName": "Jerrie",
@@ -216,6 +401,11 @@
         "Balance": "283.28"
       },
       {
+        "FirstName": "Berry",
+        "LastName": "Simononsky",
+        "Balance": "283.28"
+      },
+      {
         "FirstName": "Marjy",
         "LastName": "Starbeck",
         "Balance": "264.20"
@@ -224,6 +414,36 @@
         "FirstName": "Marjy",
         "LastName": "Starbeck",
         "Balance": "264.20"
+      },
+      {
+        "FirstName": "Marjy",
+        "LastName": "Starbeck",
+        "Balance": "264.20"
+      },
+      {
+        "FirstName": "Marjy",
+        "LastName": "Starbeck",
+        "Balance": "264.20"
+      },
+      {
+        "FirstName": "Bondy",
+        "LastName": "Linsay",
+        "Balance": "230.20"
+      },
+      {
+        "FirstName": "Bondy",
+        "LastName": "Linsay",
+        "Balance": "230.20"
+      },
+      {
+        "FirstName": "Bondy",
+        "LastName": "Linsay",
+        "Balance": "230.20"
+      },
+      {
+        "FirstName": "Bondy",
+        "LastName": "Linsay",
+        "Balance": "230.20"
       },
       {
         "FirstName": "Bondy",
@@ -251,6 +471,11 @@
         "Balance": "218.96"
       },
       {
+        "FirstName": "Millisent",
+        "LastName": "Hoyt",
+        "Balance": "218.96"
+      },
+      {
         "FirstName": "Franky",
         "LastName": "Condit",
         "Balance": "127.23"
@@ -259,6 +484,26 @@
         "FirstName": "Franky",
         "LastName": "Condit",
         "Balance": "127.23"
+      },
+      {
+        "FirstName": "Franky",
+        "LastName": "Condit",
+        "Balance": "127.23"
+      },
+      {
+        "FirstName": "Franky",
+        "LastName": "Condit",
+        "Balance": "127.23"
+      },
+      {
+        "FirstName": "Marcellus",
+        "LastName": "Stove",
+        "Balance": "123.79"
+      },
+      {
+        "FirstName": "Marcellus",
+        "LastName": "Stove",
+        "Balance": "123.79"
       },
       {
         "FirstName": "Marcellus",
@@ -275,7 +520,7 @@
   {
     "MovieName": "T.N.T.",
     "Rating": "8.00",
-    "TotalIncomes": "69.26",
+    "TotalIncomes": "138.52",
     "Customers": [
       {
         "FirstName": "Rorie",
@@ -288,6 +533,16 @@
         "Balance": "286.60"
       },
       {
+        "FirstName": "Rorie",
+        "LastName": "La Torre",
+        "Balance": "286.60"
+      },
+      {
+        "FirstName": "Rorie",
+        "LastName": "La Torre",
+        "Balance": "286.60"
+      },
+      {
         "FirstName": "Tallulah",
         "LastName": "McVeighty",
         "Balance": "285.68"
@@ -296,6 +551,26 @@
         "FirstName": "Tallulah",
         "LastName": "McVeighty",
         "Balance": "285.68"
+      },
+      {
+        "FirstName": "Tallulah",
+        "LastName": "McVeighty",
+        "Balance": "285.68"
+      },
+      {
+        "FirstName": "Tallulah",
+        "LastName": "McVeighty",
+        "Balance": "285.68"
+      },
+      {
+        "FirstName": "Base",
+        "LastName": "Feander",
+        "Balance": "213.94"
+      },
+      {
+        "FirstName": "Base",
+        "LastName": "Feander",
+        "Balance": "213.94"
       },
       {
         "FirstName": "Base",
@@ -311,13 +586,18 @@
         "FirstName": "Glenna",
         "LastName": "Gibbs",
         "Balance": "113.31"
+      },
+      {
+        "FirstName": "Glenna",
+        "LastName": "Gibbs",
+        "Balance": "113.31"
       }
     ]
   },
   {
     "MovieName": "White Man's Burden",
     "Rating": "7.00",
-    "TotalIncomes": "101.52",
+    "TotalIncomes": "203.04",
     "Customers": [
       {
         "FirstName": "Ray",
@@ -328,6 +608,31 @@
         "FirstName": "Ray",
         "LastName": "MacDearmid",
         "Balance": "77.69"
+      },
+      {
+        "FirstName": "Ray",
+        "LastName": "MacDearmid",
+        "Balance": "77.69"
+      },
+      {
+        "FirstName": "Ray",
+        "LastName": "MacDearmid",
+        "Balance": "77.69"
+      },
+      {
+        "FirstName": "Marjy",
+        "LastName": "Starbeck",
+        "Balance": "264.20"
+      },
+      {
+        "FirstName": "Marjy",
+        "LastName": "Starbeck",
+        "Balance": "264.20"
+      },
+      {
+        "FirstName": "Marjy",
+        "LastName": "Starbeck",
+        "Balance": "264.20"
       },
       {
         "FirstName": "Marjy",
@@ -348,6 +653,31 @@
         "FirstName": "Faustina",
         "LastName": "Gully",
         "Balance": "15.00"
+      },
+      {
+        "FirstName": "Faustina",
+        "LastName": "Gully",
+        "Balance": "15.00"
+      },
+      {
+        "FirstName": "Garry",
+        "LastName": "Blackeby",
+        "Balance": "123.82"
+      },
+      {
+        "FirstName": "Garry",
+        "LastName": "Blackeby",
+        "Balance": "123.82"
+      },
+      {
+        "FirstName": "Garry",
+        "LastName": "Blackeby",
+        "Balance": "123.82"
+      },
+      {
+        "FirstName": "Garry",
+        "LastName": "Blackeby",
+        "Balance": "123.82"
       },
       {
         "FirstName": "Garry",
@@ -374,8 +704,18 @@
   {
     "MovieName": "Silent Partner, The",
     "Rating": "7.00",
-    "TotalIncomes": "33.00",
+    "TotalIncomes": "66.00",
     "Customers": [
+      {
+        "FirstName": "Artemus",
+        "LastName": "Legate",
+        "Balance": "38.71"
+      },
+      {
+        "FirstName": "Artemus",
+        "LastName": "Legate",
+        "Balance": "38.71"
+      },
       {
         "FirstName": "Artemus",
         "LastName": "Legate",
@@ -390,13 +730,18 @@
         "FirstName": "Kimberlee",
         "LastName": "Johnston",
         "Balance": "211.86"
+      },
+      {
+        "FirstName": "Kimberlee",
+        "LastName": "Johnston",
+        "Balance": "211.86"
       }
     ]
   },
   {
     "MovieName": "Sorcerer",
     "Rating": "6.00",
-    "TotalIncomes": "300.30",
+    "TotalIncomes": "600.60",
     "Customers": [
       {
         "FirstName": "Liane",
@@ -409,6 +754,16 @@
         "Balance": "59.87"
       },
       {
+        "FirstName": "Liane",
+        "LastName": "Caherny",
+        "Balance": "59.87"
+      },
+      {
+        "FirstName": "Liane",
+        "LastName": "Caherny",
+        "Balance": "59.87"
+      },
+      {
         "FirstName": "Caritta",
         "LastName": "MacNeilley",
         "Balance": "312.28"
@@ -417,6 +772,31 @@
         "FirstName": "Caritta",
         "LastName": "MacNeilley",
         "Balance": "312.28"
+      },
+      {
+        "FirstName": "Caritta",
+        "LastName": "MacNeilley",
+        "Balance": "312.28"
+      },
+      {
+        "FirstName": "Caritta",
+        "LastName": "MacNeilley",
+        "Balance": "312.28"
+      },
+      {
+        "FirstName": "Evangelia",
+        "LastName": "Faustian",
+        "Balance": "28.90"
+      },
+      {
+        "FirstName": "Evangelia",
+        "LastName": "Faustian",
+        "Balance": "28.90"
+      },
+      {
+        "FirstName": "Evangelia",
+        "LastName": "Faustian",
+        "Balance": "28.90"
       },
       {
         "FirstName": "Evangelia",
@@ -439,6 +819,16 @@
         "Balance": "230.60"
       },
       {
+        "FirstName": "Donica",
+        "LastName": "Fossey",
+        "Balance": "230.60"
+      },
+      {
+        "FirstName": "Jerrome",
+        "LastName": "Pucknell",
+        "Balance": "226.13"
+      },
+      {
         "FirstName": "Jerrome",
         "LastName": "Pucknell",
         "Balance": "226.13"
@@ -452,6 +842,21 @@
         "FirstName": "Garreth",
         "LastName": "Leys",
         "Balance": "221.91"
+      },
+      {
+        "FirstName": "Garreth",
+        "LastName": "Leys",
+        "Balance": "221.91"
+      },
+      {
+        "FirstName": "Garreth",
+        "LastName": "Leys",
+        "Balance": "221.91"
+      },
+      {
+        "FirstName": "Mackenzie",
+        "LastName": "Saddleton",
+        "Balance": "209.98"
       },
       {
         "FirstName": "Mackenzie",
@@ -474,6 +879,21 @@
         "Balance": "208.50"
       },
       {
+        "FirstName": "Boris",
+        "LastName": "Bennike",
+        "Balance": "208.50"
+      },
+      {
+        "FirstName": "Boris",
+        "LastName": "Bennike",
+        "Balance": "208.50"
+      },
+      {
+        "FirstName": "Boris",
+        "LastName": "Bennike",
+        "Balance": "208.50"
+      },
+      {
         "FirstName": "Mercedes",
         "LastName": "Gertray",
         "Balance": "179.98"
@@ -482,6 +902,21 @@
         "FirstName": "Mercedes",
         "LastName": "Gertray",
         "Balance": "179.98"
+      },
+      {
+        "FirstName": "Mercedes",
+        "LastName": "Gertray",
+        "Balance": "179.98"
+      },
+      {
+        "FirstName": "Mercedes",
+        "LastName": "Gertray",
+        "Balance": "179.98"
+      },
+      {
+        "FirstName": "Henrie",
+        "LastName": "Jurges",
+        "Balance": "170.21"
       },
       {
         "FirstName": "Henrie",
@@ -499,6 +934,31 @@
         "Balance": "166.13"
       },
       {
+        "FirstName": "Eula",
+        "LastName": "Bettlestone",
+        "Balance": "166.13"
+      },
+      {
+        "FirstName": "Eula",
+        "LastName": "Bettlestone",
+        "Balance": "166.13"
+      },
+      {
+        "FirstName": "Tibold",
+        "LastName": "Briztman",
+        "Balance": "125.66"
+      },
+      {
+        "FirstName": "Tibold",
+        "LastName": "Briztman",
+        "Balance": "125.66"
+      },
+      {
+        "FirstName": "Tibold",
+        "LastName": "Briztman",
+        "Balance": "125.66"
+      },
+      {
         "FirstName": "Tibold",
         "LastName": "Briztman",
         "Balance": "125.66"
@@ -524,6 +984,16 @@
         "Balance": "125.27"
       },
       {
+        "FirstName": "Zack",
+        "LastName": "Sellers",
+        "Balance": "125.27"
+      },
+      {
+        "FirstName": "Zack",
+        "LastName": "Sellers",
+        "Balance": "125.27"
+      },
+      {
         "FirstName": "Celestine",
         "LastName": "Skells",
         "Balance": "120.33"
@@ -532,6 +1002,26 @@
         "FirstName": "Celestine",
         "LastName": "Skells",
         "Balance": "120.33"
+      },
+      {
+        "FirstName": "Celestine",
+        "LastName": "Skells",
+        "Balance": "120.33"
+      },
+      {
+        "FirstName": "Celestine",
+        "LastName": "Skells",
+        "Balance": "120.33"
+      },
+      {
+        "FirstName": "Queenie",
+        "LastName": "Schroeder",
+        "Balance": "102.12"
+      },
+      {
+        "FirstName": "Queenie",
+        "LastName": "Schroeder",
+        "Balance": "102.12"
       },
       {
         "FirstName": "Queenie",
@@ -548,8 +1038,38 @@
   {
     "MovieName": "Trojan Eddie",
     "Rating": "5.00",
-    "TotalIncomes": "131.91",
+    "TotalIncomes": "263.82",
     "Customers": [
+      {
+        "FirstName": "Randi",
+        "LastName": "Ferraraccio",
+        "Balance": "59.44"
+      },
+      {
+        "FirstName": "Randi",
+        "LastName": "Ferraraccio",
+        "Balance": "59.44"
+      },
+      {
+        "FirstName": "Randi",
+        "LastName": "Ferraraccio",
+        "Balance": "59.44"
+      },
+      {
+        "FirstName": "Randi",
+        "LastName": "Ferraraccio",
+        "Balance": "59.44"
+      },
+      {
+        "FirstName": "Randi",
+        "LastName": "Ferraraccio",
+        "Balance": "59.44"
+      },
+      {
+        "FirstName": "Randi",
+        "LastName": "Ferraraccio",
+        "Balance": "59.44"
+      },
       {
         "FirstName": "Randi",
         "LastName": "Ferraraccio",
@@ -586,6 +1106,26 @@
         "Balance": "266.80"
       },
       {
+        "FirstName": "Doe",
+        "LastName": "Westbrook",
+        "Balance": "266.80"
+      },
+      {
+        "FirstName": "Jillian",
+        "LastName": "Galvin",
+        "Balance": "260.05"
+      },
+      {
+        "FirstName": "Jillian",
+        "LastName": "Galvin",
+        "Balance": "260.05"
+      },
+      {
+        "FirstName": "Jillian",
+        "LastName": "Galvin",
+        "Balance": "260.05"
+      },
+      {
         "FirstName": "Jillian",
         "LastName": "Galvin",
         "Balance": "260.05"
@@ -606,6 +1146,21 @@
         "Balance": "237.20"
       },
       {
+        "FirstName": "Ofilia",
+        "LastName": "Binford",
+        "Balance": "237.20"
+      },
+      {
+        "FirstName": "Blinnie",
+        "LastName": "Kundert",
+        "Balance": "218.98"
+      },
+      {
+        "FirstName": "Blinnie",
+        "LastName": "Kundert",
+        "Balance": "218.98"
+      },
+      {
         "FirstName": "Blinnie",
         "LastName": "Kundert",
         "Balance": "218.98"
@@ -620,12 +1175,27 @@
   {
     "MovieName": "Prey, The (La proie)",
     "Rating": "5.00",
-    "TotalIncomes": "110.39",
+    "TotalIncomes": "220.78",
     "Customers": [
       {
         "FirstName": "Chuck",
         "LastName": "Udall",
         "Balance": "94.09"
+      },
+      {
+        "FirstName": "Chuck",
+        "LastName": "Udall",
+        "Balance": "94.09"
+      },
+      {
+        "FirstName": "Whit",
+        "LastName": "Bidwell",
+        "Balance": "83.20"
+      },
+      {
+        "FirstName": "Whit",
+        "LastName": "Bidwell",
+        "Balance": "83.20"
       },
       {
         "FirstName": "Whit",
@@ -643,6 +1213,21 @@
         "Balance": "371.21"
       },
       {
+        "FirstName": "Marje",
+        "LastName": "Boutflour",
+        "Balance": "371.21"
+      },
+      {
+        "FirstName": "Gretna",
+        "LastName": "Bellham",
+        "Balance": "299.37"
+      },
+      {
+        "FirstName": "Gretna",
+        "LastName": "Bellham",
+        "Balance": "299.37"
+      },
+      {
         "FirstName": "Gretna",
         "LastName": "Bellham",
         "Balance": "299.37"
@@ -661,6 +1246,21 @@
         "FirstName": "Mariejeanne",
         "LastName": "Varden",
         "Balance": "229.88"
+      },
+      {
+        "FirstName": "Mariejeanne",
+        "LastName": "Varden",
+        "Balance": "229.88"
+      },
+      {
+        "FirstName": "Mariejeanne",
+        "LastName": "Varden",
+        "Balance": "229.88"
+      },
+      {
+        "FirstName": "Denny",
+        "LastName": "Plaice",
+        "Balance": "180.73"
       },
       {
         "FirstName": "Denny",

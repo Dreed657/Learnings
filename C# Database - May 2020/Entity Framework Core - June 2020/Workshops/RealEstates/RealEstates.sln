@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30223.230
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.csproj", "{20F02092-88E3-4B77-AD4F-BFDC7BFBE52C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.csproj", "{20F02092-88E3-4B77-AD4F-BFDC7BFBE52C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Importer", "Importer\Importer.csproj", "{8910A3EA-0672-4A1B-83D7-2342EB180EDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Importer", "Importer\Importer.csproj", "{8910A3EA-0672-4A1B-83D7-2342EB180EDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{F302D8BB-948C-4831-A1B9-B17DA965F8E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{F302D8BB-948C-4831-A1B9-B17DA965F8E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{883F3665-3DF2-4013-BFA1-7049EF53B2AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{883F3665-3DF2-4013-BFA1-7049EF53B2AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{1431B803-21E9-42E1-9F70-EB73293166AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{1431B803-21E9-42E1-9F70-EB73293166AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstate.Api", "RealEstate.Api\RealEstate.Api.csproj", "{C6D52ABF-3F3E-4DAE-93DA-C1DF4FDFBCA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1431B803-21E9-42E1-9F70-EB73293166AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1431B803-21E9-42E1-9F70-EB73293166AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1431B803-21E9-42E1-9F70-EB73293166AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D52ABF-3F3E-4DAE-93DA-C1DF4FDFBCA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D52ABF-3F3E-4DAE-93DA-C1DF4FDFBCA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D52ABF-3F3E-4DAE-93DA-C1DF4FDFBCA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D52ABF-3F3E-4DAE-93DA-C1DF4FDFBCA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Linq;
+using AutoMapper;
 using Cinema.XMLTools;
 
 namespace Cinema.DataProcessor
@@ -39,18 +40,12 @@ namespace Cinema.DataProcessor
             {
                 if (IsValid(dto))
                 {
-                    var movie = new Movie()
-                    {
-                        Title = dto.Title,
-                        Genre = dto.Genre,
-                        Duration = dto.Duration,
-                        Rating = dto.Rating,
-                        Director = dto.Director
-                    };
+
+                    var movie = Mapper.Map<Movie>(dto);
 
                     movies.Add(movie);
 
-                    sb.AppendLine(string.Format(SuccessfulImportMovie, dto.Title, dto.Genre, dto.Rating.ToString("F2")));
+                    sb.AppendLine(string.Format(SuccessfulImportMovie, movie.Title, movie.Genre, movie.Rating.ToString("F2")));
                 }
                 else
                 {
@@ -73,14 +68,10 @@ namespace Cinema.DataProcessor
             {
                 if (IsValid(hallDto))
                 {
-                    var hall = new Hall
-                    {
-                        Name = hallDto.Name,
-                        Is3D = hallDto.Is3D,
-                        Is4Dx = hallDto.Is4Dx
-                    };
+                    var hall = Mapper.Map<Hall>(hallDto);
                     
                     context.Halls.Add(hall);
+                    context.SaveChanges();
 
                     AddSeatsToHall(context, hall.Id, hallDto.Seats);
 
@@ -91,8 +82,6 @@ namespace Cinema.DataProcessor
                     sb.AppendLine(ErrorMessage);
                 }
             }
-
-            context.SaveChanges();
 
             return sb.ToString().Trim();
         }
@@ -133,12 +122,7 @@ namespace Cinema.DataProcessor
             {
                 if (IsValid(projectionsDto) && IsMovieExists(context, projectionsDto.MovieId) && IsHallExists(context, projectionsDto.HallId))
                 {
-                    var projection = new Projection
-                    {
-                        MovieId = projectionsDto.MovieId,
-                        HallId = projectionsDto.HallId,
-                        DateTime = DateTime.Parse(projectionsDto.DateTime, CultureInfo.InvariantCulture)
-                    };
+                    var projection = Mapper.Map<Projection>(projectionsDto);
 
                     context.Projections.Add(projection);
                     context.SaveChanges();
@@ -173,13 +157,7 @@ namespace Cinema.DataProcessor
             {
                 if (IsValid(customerDto))
                 {
-                    var customer = new Customer
-                    {
-                        FirstName = customerDto.FirstName,
-                        LastName = customerDto.LastName,
-                        Age = customerDto.Age,
-                        Balance = customerDto.Balance
-                    };
+                    var customer = Mapper.Map<Customer>(customerDto);
 
                     context.Customers.Add(customer);
                     context.SaveChanges();

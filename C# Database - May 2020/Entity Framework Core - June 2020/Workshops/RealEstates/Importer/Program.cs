@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Services;
 using System.Diagnostics;
 using System.Text;
+using Services.DataTransferObject;
 
 namespace Importer
 {
@@ -29,16 +30,20 @@ namespace Importer
                 {
                     timer.Start();
 
-                    propertyService.Create(
-                        property.District,
-                        property.Size,
-                        property.Year,
-                        property.Price,
-                        property.Type,
-                        property.BuildingType,
-                        property.Floor,
-                        property.TotalFloors
-                    );
+                    var createModel = new PropertyCreateDto
+                    {
+                        District = property.District,
+                        Size = property.Size,
+                        Year = property.Year,
+                        Price = property.Price,
+                        Url = property.Url,
+                        PropertyType = property.Type,
+                        BuildingType = property.BuildingType,
+                        Floor = property.Floor,
+                        MaxFloors = property.TotalFloors
+                    };
+
+                    propertyService.Create(createModel);
 
                     timer.Stop();
 

@@ -18,5 +18,7 @@ namespace Services.DataTransferObject
         public int? Year { get; set; }
 
         public string Floor { get; set; }
+
+        public string Url { get; set; }
     }
 }

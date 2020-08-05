@@ -95,6 +95,9 @@ namespace Data.Migrations
                     b.Property<int?>("TotalNumberOfFloors")
                         .HasColumnType("int");
 
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("Year")
                         .HasColumnType("int");
 

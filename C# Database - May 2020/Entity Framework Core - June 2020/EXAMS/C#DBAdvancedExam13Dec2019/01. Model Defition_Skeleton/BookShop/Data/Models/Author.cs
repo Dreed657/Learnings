@@ -10,13 +10,11 @@ namespace BookShop.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MinLength(3)]
-        [MaxLength(30)]
+        [MinLength(3), MaxLength(30)]
         public string FirstName { get; set; }
 
         [Required]
-        [MinLength(3)]
-        [MaxLength(30)]
+        [MinLength(3), MaxLength(30)]
         public string LastName { get; set; }
 
         [Required]
@@ -27,6 +25,6 @@ namespace BookShop.Data.Models
         [Phone]
         public string Phone { get; set; }
 
-        public virtual ICollection<AuthorBook> AuthorsBooks { get; set; }
+        public virtual ICollection<AuthorBook> AuthorsBooks { get; set; } = new List<AuthorBook>();
     }
 }
