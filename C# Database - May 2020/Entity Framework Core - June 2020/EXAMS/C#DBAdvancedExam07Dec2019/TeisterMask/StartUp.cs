@@ -1,26 +1,24 @@
-﻿namespace MusicHub
+﻿namespace TeisterMask
 {
     using System;
+    using System.Globalization;
     using System.IO;
-
-    using AutoMapper;
     using Microsoft.EntityFrameworkCore;
-   
+
     using Data;
 
     public class StartUp
     {
         public static void Main(string[] args)
         {
-            var context = new MusicHubDbContext();
+            var context = new TeisterMaskContext();
 
-            Mapper.Initialize(config => config.AddProfile<MusicHubProfile>());
-
-            ResetDatabase(context, shouldDropDatabase: false);
+            ResetDatabase(context, shouldDropDatabase: true);
 
             var projectDir = GetProjectDirectory();
-            
+
             ImportEntities(context, projectDir + @"Datasets/", projectDir + @"ImportResults/");
+
             ExportEntities(context, projectDir + @"ExportResults/");
 
             using (var transaction = context.Database.BeginTransaction())
@@ -29,33 +27,34 @@
             }
         }
 
-        private static void ImportEntities(MusicHubDbContext context, string baseDir, string exportDir)
+        private static void ImportEntities(TeisterMaskContext context,string baseDir, string exportDir)
         {
-            var writers = DataProcessor.Deserializer.ImportWriters(context, File.ReadAllText(baseDir + "ImportWriters.json"));
-            PrintAndExportEntityToFile(writers, exportDir + "Actual - ImportWriters.txt");
+            var projects =
+                DataProcessor.Deserializer.ImportProjects(context,
+                    File.ReadAllText(baseDir + "projects.xml"));
 
-            var producerAlbums = DataProcessor.Deserializer.ImportProducersAlbums(context, File.ReadAllText(baseDir + "ImportProducersAlbums.json"));
-            PrintAndExportEntityToFile(producerAlbums, exportDir + "Actual - ImportProducersAlbums.txt");
+            PrintAndExportEntityToFile(projects, exportDir + "Actual Result - ImportProjects.txt");
 
-            var songs = DataProcessor.Deserializer.ImportSongs(context, File.ReadAllText(baseDir + "ImportSongs.xml"));
-            PrintAndExportEntityToFile(songs, exportDir + "Actual - ImportSongs.txt");
+            var employees =
+             DataProcessor.Deserializer.ImportEmployees(context,
+                 File.ReadAllText(baseDir + "employees.json"));
 
-            var performers = DataProcessor.Deserializer.ImportSongPerformers(context, File.ReadAllText(baseDir + "ImportSongPerformers.xml"));
-            PrintAndExportEntityToFile(performers, exportDir + "Actual - ImportSongPerformers.txt");
+            PrintAndExportEntityToFile(employees, exportDir + "Actual Result - ImportEmployees.txt");
         }
 
-        private static void ExportEntities(MusicHubDbContext context, string exportDir)
+        private static void ExportEntities(TeisterMaskContext context, string exportDir)
         {
-            var jsonOutput = DataProcessor.Serializer.ExportAlbumsInfo(context, 9);
-            Console.WriteLine(jsonOutput);
-            File.WriteAllText(exportDir + "Actual - AlbumsInfo.json", jsonOutput);
+            var exportProcrastinatedProjects = DataProcessor.Serializer.ExportProjectWithTheirTasks(context);
+            Console.WriteLine(exportProcrastinatedProjects);
+            File.WriteAllText(exportDir + "Actual Result - ExportProjectWithTheirTasks.xml", exportProcrastinatedProjects);
 
-            var xmlOutput = DataProcessor.Serializer.ExportSongsAboveDuration(context, 4);
-            Console.WriteLine(xmlOutput);
-            File.WriteAllText(exportDir + "Actual - SongsAboveDuration.xml", xmlOutput);
+            DateTime dateTime = DateTime.ParseExact("25/01/2018", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            var exportTopMovies = DataProcessor.Serializer.ExportMostBusiestEmployees(context, dateTime);
+            Console.WriteLine(exportTopMovies);
+            File.WriteAllText(exportDir + "Actual Result - ExportMostBusiestEmployees.json", exportTopMovies);
         }
 
-        private static void ResetDatabase(MusicHubDbContext context, bool shouldDropDatabase = false)
+        private static void ResetDatabase(TeisterMaskContext context, bool shouldDropDatabase = false)
         {
             if (shouldDropDatabase)
             {

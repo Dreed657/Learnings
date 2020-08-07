@@ -49,13 +49,13 @@ namespace MusicHub.DataProcessor
                 .Select(x => new ExportSongDto
                 {
                     SongName = x.Name,
-                    WriterName = x.Writer.Name,
+                    Writer = x.Writer.Name,
                     Performer = x.SongPerformers.Select(s => s.Performer.FirstName + " " + s.Performer.LastName).FirstOrDefault(),
                     AlbumProducer = x.Album.Producer.Name,
                     Duration = x.Duration.ToString("c")
                 })
                 .OrderBy(x => x.SongName)
-                .ThenBy(x => x.WriterName)
+                .ThenBy(x => x.Writer)
                 .ThenBy(x => x.Performer)
                 .ToArray();
 

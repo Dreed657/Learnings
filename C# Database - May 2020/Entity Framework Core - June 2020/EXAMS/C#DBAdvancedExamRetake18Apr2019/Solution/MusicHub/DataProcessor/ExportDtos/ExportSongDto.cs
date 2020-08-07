@@ -9,7 +9,7 @@ namespace MusicHub.DataProcessor.ExportDtos
         public string SongName { get; set; }
 
         [XmlElement("Writer")]
-        public string WriterName { get; set; }
+        public string Writer { get; set; }
 
         [XmlElement("Performer")]
         public string Performer { get; set; }
