@@ -1,0 +1,19 @@
+<div class="jumbotron mt-20">
+	<div class="container">
+	  <h1>Find a movie</h1>
+	  <p>Search for a movie using the form below:</p>
+	  <form #f="ngForm" (ngSubmit)="Search()">
+		<input required class="form-control input-lg" type="text" placeholder="Search" aria-label="Search" name="query" ngModel>
+		<button [disabled]="f.invalid" class="btn btn-warning mt-2" type="submit">Search</button>
+	  </form>
+	</div>
+ </div>
+
+<ng-template [ngIf]="searchedMovies">
+  <h1 class="text-center">Searched Movie: </h1>
+  <div class="row mt-6">
+      <div class="col-lg-2" *ngFor="let movie of searchedMovies">
+          <app-movie [movie]="movie"></app-movie>
+      </div>
+  </div>
+</ng-template>

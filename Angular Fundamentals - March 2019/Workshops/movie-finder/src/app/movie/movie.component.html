@@ -1,0 +1,10 @@
+<div class="card mb-3">
+    <h4 class="card-header">{{ movie.title }}</h4>
+    <img style="height: 200px; width: 100%; display: block;" [src]="imagePath" alt="Card image">
+    <div class="card-body">
+      <p class="card-text">{{ movie.release_date }}</p>
+    </div>
+    <div class="card-footer text-muted">
+      <a [routerLink]="[ '/movies', movie.id ]" class="btn btn-primary">View details</a>
+    </div>
+</div>
