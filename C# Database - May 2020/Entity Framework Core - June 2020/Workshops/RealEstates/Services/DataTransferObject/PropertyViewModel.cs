@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Models;
-
-namespace Services.DataTransferObject
+﻿namespace Services.DataTransferObject
 {
     public class PropertyViewModel
     {

@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using Data;
+﻿using Data;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using Services.Contracts;
 using Services.DataTransferObject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Services
 {
@@ -18,7 +20,7 @@ namespace Services
             this._context = db;
         }
 
-        public PropertyCreateDto Create(PropertyCreateDto model)
+        public async Task<RealEstateProperty> Create(PropertyCreateDto model)
         {
             if (model.District == null)
             {
@@ -35,27 +37,27 @@ namespace Services
                 Url = model.Url
             };
 
-            var districtEntity = this._context.Districts.FirstOrDefault(x => x.Name.Trim() == model.District.Trim()) ?? 
+            var districtEntity = this._context.Districts.FirstOrDefault(x => x.Name.Trim() == model.District.Trim()) ??
                                     new District { Name = model.District };
 
             property.District = districtEntity;
 
-            var propertyTypeEntity = this._context.PropertyTypes.FirstOrDefault(x => x.Name.Trim() == model.PropertyType.Trim()) ?? 
-                                     new PropertyType {Name = model.PropertyType};
+            var propertyTypeEntity = this._context.PropertyTypes.FirstOrDefault(x => x.Name.Trim() == model.PropertyType.Trim()) ??
+                                     new PropertyType { Name = model.PropertyType };
 
             property.PropertyType = propertyTypeEntity;
 
             var buildingTypeEntity = this._context.BuildingTypes.FirstOrDefault(x => x.Name.Trim() == model.BuildingType.Trim()) ??
-                                     new BuildingType {Name = model.BuildingType};
+                                     new BuildingType { Name = model.BuildingType };
 
             property.BuildingType = buildingTypeEntity;
 
-            this._context.RealEstateProperties.Add(property);
-            this._context.SaveChanges();
+            await this._context.RealEstateProperties.AddAsync(property);
+            await this._context.SaveChangesAsync();
 
-            this.UpdateTags(property.Id);
+            await this.UpdateTags(property.Id);
 
-            return model;
+            return property;
         }
 
         public bool Delete(int id)
@@ -63,7 +65,7 @@ namespace Services
             var property = this._context.RealEstateProperties.FirstOrDefault(x => x.Id == id);
 
             if (property == null) return false;
-           
+
             this._context.RealEstateProperties.Remove(property);
             return true;
         }
@@ -73,7 +75,7 @@ namespace Services
             throw new NotImplementedException();
         }
 
-        public void UpdateTags(int propertyId)
+        public async Task UpdateTags(int propertyId)
         {
             var property = this._context.RealEstateProperties.FirstOrDefault(x => x.Id == propertyId);
             property.Tags.Clear();
@@ -113,42 +115,42 @@ namespace Services
                 property.Tags.Add(new RealEstatePropertyTag { Tag = this.GetOrCreateTag("ExpensiveApartment") });
             }
 
-            this._context.SaveChanges();
+            await this._context.SaveChangesAsync();
         }
 
         private Tag GetOrCreateTag(string tagName)
         {
-            return this._context.Tags.FirstOrDefault(x => x.Name.Trim() == tagName.Trim()) ?? new Tag { Name = tagName }; 
+            return this._context.Tags.FirstOrDefault(x => x.Name.Trim() == tagName.Trim()) ?? new Tag { Name = tagName };
         }
 
-        public IEnumerable<PropertyViewModel> GetAll(int count = 10)
+        public async Task<IEnumerable<PropertyViewModel>> GetAll(int count = 10)
         {
-            return this._context.RealEstateProperties
+            return await this._context.RealEstateProperties
                 .Select(MapToPropertyViewModel())
                 .Take(count)
-                .ToList();
+                .ToListAsync();
         }
 
-        public IEnumerable<PropertyViewModel> Search(int minYear, int maxYear, int minSize, int maxSize)
+        public async Task<IEnumerable<PropertyViewModel>> Search(int minYear, int maxYear, int minSize, int maxSize)
         {
-            return this._context.RealEstateProperties
+            return await this._context.RealEstateProperties
                 .Where(x => x.Year >= minYear && x.Year <= maxYear && x.Size >= minSize && x.Size <= maxSize)
                 .Select(MapToPropertyViewModel())
                 .OrderBy(x => x.Size)
-                .ToList();
+                .ToListAsync();
         }
 
-        public IEnumerable<PropertyViewModel> SearchByPrice(int minPrice, int maxPrice)
+        public async Task<IEnumerable<PropertyViewModel>> SearchByPrice(int minPrice, int maxPrice)
         {
-            return this._context.RealEstateProperties
+            return await this._context.RealEstateProperties
                 .Where(x => x.Price >= minPrice && x.Price <= maxPrice)
                 .Select(MapToPropertyViewModel())
                 .OrderBy(x => x.District)
                 .ThenByDescending(x => x.Price)
-                .ToList();
+                .ToListAsync();
         }
 
-        private Expression<Func<RealEstateProperty, PropertyViewModel>> MapToPropertyViewModel()
+        private static Expression<Func<RealEstateProperty, PropertyViewModel>> MapToPropertyViewModel()
         {
             return x => new PropertyViewModel
             {

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Text;
-using Data;
-using Microsoft.EntityFrameworkCore;
+﻿using Data;
 using Microsoft.EntityFrameworkCore.Internal;
 using Services;
 using Services.Contracts;
+using System;
+using System.Text;
 
 namespace ConsoleApplication
 {
@@ -23,7 +22,7 @@ namespace ConsoleApplication
             IPropertiesService propertiesService = new PropertiesService(db);
             IDistrictsService districtsService = new DistrictsService(db);
 
-            var properties = propertiesService.SearchByPrice(20000, 30000);
+            var properties = propertiesService.SearchByPrice(20000, 30000).Result;
 
             if (properties.Any())
             {

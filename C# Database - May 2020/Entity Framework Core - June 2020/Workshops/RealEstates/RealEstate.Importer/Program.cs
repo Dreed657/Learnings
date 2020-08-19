@@ -1,27 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Data;
+﻿using Data;
 using Newtonsoft.Json;
 using Services;
-using System.Diagnostics;
-using System.Text;
 using Services.DataTransferObject;
+using System;
+using System.Collections.Concurrent;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Importer
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-
             var db = new RealEstateDbContext();
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
+
             var data = File.ReadAllText("imot.bg-raw-data-2020-07-23.json");
-            var properties = JsonConvert.DeserializeObject<IEnumerable<JsonProperty>>(data);
+            var properties = JsonConvert.DeserializeObject<JsonProperty[]>(data);
             var propertyService = new PropertiesService(db);
 
+            await InsertToDb(propertyService, properties);
+        }
+
+        private static async Task InsertToDb(PropertiesService propertyService, JsonProperty[] properties)
+        {
             foreach (var property in properties.Where(x => x.Price > 500))
             {
                 var timer = new Stopwatch();
@@ -43,19 +52,41 @@ namespace Importer
                         MaxFloors = property.TotalFloors
                     };
 
-                    propertyService.Create(createModel);
+                    await propertyService.Create(createModel);
 
                     timer.Stop();
 
                     var propertyInfo = $"District: {property.District} ({property.Floor}/{property.TotalFloors}), {property.Year}, {property.Size}m2, Price: {property.Price}";
 
-                    Console.WriteLine($"Created: {propertyInfo}. ({timer.ElapsedMilliseconds}ms)");
+                    NonBlockingConsole.WriteLine($"Created: {propertyInfo}. ({timer.ElapsedMilliseconds}ms)");
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    Console.WriteLine(e);
+                    // ignored
                 }
             }
         }
     }
+
+    public static class NonBlockingConsole
+    {
+        private static readonly BlockingCollection<string> m_Queue = new BlockingCollection<string>();
+
+        static NonBlockingConsole()
+        {
+            var thread = new Thread(
+                () =>
+                {
+                    while (true) Console.WriteLine(m_Queue.Take());
+                })
+            { IsBackground = true };
+            thread.Start();
+        }
+
+        public static void WriteLine(string value)
+        {
+            m_Queue.Add(value);
+        }
+    }
+
 }

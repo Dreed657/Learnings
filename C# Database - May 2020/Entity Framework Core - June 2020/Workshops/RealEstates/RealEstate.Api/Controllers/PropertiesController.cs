@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Models;
 using Services.Contracts;
 using Services.DataTransferObject;
+using System.Linq;
 
 namespace RealEstate.Api.Controllers
 {
@@ -21,9 +18,9 @@ namespace RealEstate.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(int count  = 5)
+        public IActionResult Get(int count = 5)
         {
-            var result = this.propertiesService.GetAll(count);
+            var result = this.propertiesService.GetAll(count).Result;
 
             return Ok(result);
         }
@@ -31,7 +28,7 @@ namespace RealEstate.Api.Controllers
         [HttpGet("ByPrice")]
         public IActionResult Get(int minPrice, int maxPrice, int count)
         {
-            var result = this.propertiesService.SearchByPrice(minPrice, maxPrice).Take(count);
+            var result = this.propertiesService.SearchByPrice(minPrice, maxPrice).Result.Take(count);
 
             return Ok(result);
         }

@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using Data;
+﻿using Data;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using Services.Contracts;
 using Services.DataTransferObject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Services
 {
@@ -18,22 +20,22 @@ namespace Services
             this.db = db;
         }
 
-        public IEnumerable<DistrictViewModel> GetTopDistrictsByAveragePrice(int count = 10)
+        public async Task<IEnumerable<DistrictViewModel>> GetTopDistrictsByAveragePrice(int count = 10)
         {
-            return this.db.Districts
+            return await this.db.Districts
                 .OrderByDescending(x => x.Properties.Average(x => x.Price))
                 .Select(MapToDistrictViewModel())
                 .Take(count)
-                .ToList();
+                .ToListAsync();
         }
 
-        public IEnumerable<DistrictViewModel> GetTopDistrictsByByNumberOfProperties(int count = 10)
+        public async Task<IEnumerable<DistrictViewModel>> GetTopDistrictsByByNumberOfProperties(int count = 10)
         {
-            return this.db.Districts
+            return await this.db.Districts
                 .OrderByDescending(x => x.Properties.Count)
                 .Select(MapToDistrictViewModel())
                 .Take(count)
-                .ToList();
+                .ToListAsync();
         }
 
         private static Expression<Func<District, DistrictViewModel>> MapToDistrictViewModel()
