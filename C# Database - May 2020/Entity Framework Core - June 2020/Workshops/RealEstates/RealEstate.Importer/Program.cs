@@ -13,14 +13,14 @@ using System.Threading.Tasks;
 
 namespace Importer
 {
-    class Program
+    public class Program
     {
         static async Task Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
             var db = new RealEstateDbContext();
-            db.Database.EnsureDeleted();
-            db.Database.EnsureCreated();
+            //db.Database.EnsureDeleted();
+            //db.Database.EnsureCreated();
 
             var data = File.ReadAllText("imot.bg-raw-data-2020-07-23.json");
             var properties = JsonConvert.DeserializeObject<JsonProperty[]>(data);
@@ -58,7 +58,7 @@ namespace Importer
 
                     var propertyInfo = $"District: {property.District} ({property.Floor}/{property.TotalFloors}), {property.Year}, {property.Size}m2, Price: {property.Price}";
 
-                    NonBlockingConsole.WriteLine($"Created: {propertyInfo}. ({timer.ElapsedMilliseconds}ms)");
+                    Console.WriteLine($"Created: {propertyInfo}. ({timer.ElapsedMilliseconds}ms)");
                 }
                 catch (Exception)
                 {
@@ -67,26 +67,4 @@ namespace Importer
             }
         }
     }
-
-    public static class NonBlockingConsole
-    {
-        private static readonly BlockingCollection<string> m_Queue = new BlockingCollection<string>();
-
-        static NonBlockingConsole()
-        {
-            var thread = new Thread(
-                () =>
-                {
-                    while (true) Console.WriteLine(m_Queue.Take());
-                })
-            { IsBackground = true };
-            thread.Start();
-        }
-
-        public static void WriteLine(string value)
-        {
-            m_Queue.Add(value);
-        }
-    }
-
 }

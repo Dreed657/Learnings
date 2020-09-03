@@ -20,7 +20,7 @@ namespace Services
             this._context = db;
         }
 
-        public async Task<RealEstateProperty> Create(PropertyCreateDto model)
+        public async Task<PropertyViewModel> Create(PropertyCreateDto model)
         {
             if (model.District == null)
             {
@@ -57,7 +57,7 @@ namespace Services
 
             await this.UpdateTags(property.Id);
 
-            return property;
+            return SingleMapToPropertyViewModel(property);
         }
 
         public bool Delete(int id)
@@ -153,6 +153,21 @@ namespace Services
         private static Expression<Func<RealEstateProperty, PropertyViewModel>> MapToPropertyViewModel()
         {
             return x => new PropertyViewModel
+            {
+                Price = x.Price,
+                Floor = (x.Floor ?? 0).ToString() + "/" + (x.TotalNumberOfFloors ?? 0).ToString(),
+                Size = x.Size,
+                Year = x.Year,
+                BuildingType = x.BuildingType.Name,
+                PropertyType = x.PropertyType.Name,
+                District = x.District.Name,
+                Url = x.Url
+            };
+        }
+
+        private static PropertyViewModel SingleMapToPropertyViewModel(RealEstateProperty x)
+        {
+            return new PropertyViewModel
             {
                 Price = x.Price,
                 Floor = (x.Floor ?? 0).ToString() + "/" + (x.TotalNumberOfFloors ?? 0).ToString(),

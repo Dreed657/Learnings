@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Api", "RealEstate.Api\RealEstate.Api.csproj", "{C6D52ABF-3F3E-4DAE-93DA-C1DF4FDFBCA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstate.Importer", "RealEstate.Importer\RealEstate.Importer.csproj", "{7D90F5D6-A93D-4368-8E9C-CEB0F4EC198A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate.Importer", "RealEstate.Importer\RealEstate.Importer.csproj", "{7D90F5D6-A93D-4368-8E9C-CEB0F4EC198A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RealEstate.Data", "RealEstate.Data", "{2F4F2319-724C-4D48-8FEC-E515558110FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RealEstate.Tests", "RealEstate.Tests", "{73BAEF9E-C204-4728-9634-7F98B9F3606B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RealEstate.Web", "RealEstate.Web", "{E693D8DC-6CE1-469F-B09C-A9EA202A0752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +54,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F302D8BB-948C-4831-A1B9-B17DA965F8E3} = {2F4F2319-724C-4D48-8FEC-E515558110FF}
+		{883F3665-3DF2-4013-BFA1-7049EF53B2AA} = {2F4F2319-724C-4D48-8FEC-E515558110FF}
+		{1431B803-21E9-42E1-9F70-EB73293166AB} = {2F4F2319-724C-4D48-8FEC-E515558110FF}
+		{C6D52ABF-3F3E-4DAE-93DA-C1DF4FDFBCA9} = {E693D8DC-6CE1-469F-B09C-A9EA202A0752}
+		{7D90F5D6-A93D-4368-8E9C-CEB0F4EC198A} = {2F4F2319-724C-4D48-8FEC-E515558110FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71EFA5AC-2B0F-45C0-B8C2-CBF025A611F3}

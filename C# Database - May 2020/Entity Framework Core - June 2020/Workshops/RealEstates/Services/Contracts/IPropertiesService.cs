@@ -7,7 +7,7 @@ namespace Services.Contracts
 {
     public interface IPropertiesService
     {
-        Task<RealEstateProperty> Create(PropertyCreateDto models);
+        Task<PropertyViewModel> Create(PropertyCreateDto models);
 
         bool Delete(int Id);
 

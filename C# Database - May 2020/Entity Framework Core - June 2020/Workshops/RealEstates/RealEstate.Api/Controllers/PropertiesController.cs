@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Models;
 using Services.Contracts;
 using Services.DataTransferObject;
 using System.Linq;
@@ -10,17 +9,17 @@ namespace RealEstate.Api.Controllers
     [ApiController]
     public class PropertiesController : ControllerBase
     {
-        private readonly IPropertiesService propertiesService;
+        private readonly IPropertiesService _propertiesService;
 
         public PropertiesController(IPropertiesService propertiesService)
         {
-            this.propertiesService = propertiesService;
+            this._propertiesService = propertiesService;
         }
 
         [HttpGet]
         public IActionResult Get(int count = 5)
         {
-            var result = this.propertiesService.GetAll(count).Result;
+            var result = this._propertiesService.GetAll(count).Result;
 
             return Ok(result);
         }
@@ -28,15 +27,17 @@ namespace RealEstate.Api.Controllers
         [HttpGet("ByPrice")]
         public IActionResult Get(int minPrice, int maxPrice, int count)
         {
-            var result = this.propertiesService.SearchByPrice(minPrice, maxPrice).Result.Take(count);
+            var result = this._propertiesService.SearchByPrice(minPrice, maxPrice).Result.Take(count);
 
             return Ok(result);
         }
 
         [HttpPost]
-        public ActionResult<RealEstateProperty> Create(PropertyCreateDto model)
+        public ActionResult<PropertyViewModel> Create(PropertyCreateDto model)
         {
-            return Ok(this.propertiesService.Create(model));
+            var result = this._propertiesService.Create(model).Result;
+
+            return Ok(result);
         }
     }
 }
