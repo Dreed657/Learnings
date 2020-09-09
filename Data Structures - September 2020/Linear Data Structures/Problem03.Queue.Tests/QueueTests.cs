@@ -13,7 +13,7 @@ namespace Problem03.Queue.Tests
         [SetUp]
         public void InitializeQueue()
         {
-            this._queue = new Queue<int>();
+            this._queue = new FastQueue<int>();
         }
 
         [Test]
