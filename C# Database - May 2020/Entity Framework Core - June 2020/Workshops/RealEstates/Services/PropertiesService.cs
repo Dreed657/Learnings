@@ -5,6 +5,7 @@ using Services.Contracts;
 using Services.DataTransferObject;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -20,7 +21,40 @@ namespace Services
             this._context = db;
         }
 
-        public async Task<PropertyViewModel> Create(PropertyCreateDto model)
+        public async Task SingleInsert(PropertyCreateDto model)
+        {
+            var property = await this.Create(model);
+            await this._context.RealEstateProperties.AddAsync(property);
+        }
+
+        public async Task BulkInsert(PropertyCreateDto[] models)
+        {
+            var convertedProperties = new List<RealEstateProperty>();
+
+            var count = 0;
+
+            foreach (var dto in models)
+            {
+                var timer = new Stopwatch();
+
+                timer.Start();
+                count++;
+
+                var property = await this.Create(dto);
+                convertedProperties.Add(property);
+                
+                timer.Stop();
+
+                Console.WriteLine(this.PropertyToString(property, timer.ElapsedTicks));
+                
+                if (count % 50 == 0) Console.WriteLine(count + "...");
+            }
+
+            await this._context.RealEstateProperties.AddRangeAsync(convertedProperties);
+            await this._context.SaveChangesAsync();
+        }
+
+        private async Task<RealEstateProperty> Create(PropertyCreateDto model)
         {
             if (model.District == null)
             {
@@ -52,12 +86,7 @@ namespace Services
 
             property.BuildingType = buildingTypeEntity;
 
-            await this._context.RealEstateProperties.AddAsync(property);
-            await this._context.SaveChangesAsync();
-
-            await this.UpdateTags(property.Id);
-
-            return SingleMapToPropertyViewModel(property);
+            return property;
         }
 
         public bool Delete(int id)
@@ -75,9 +104,18 @@ namespace Services
             throw new NotImplementedException();
         }
 
-        public async Task UpdateTags(int propertyId)
+        public async void BulkUpdateTags()
         {
-            var property = this._context.RealEstateProperties.FirstOrDefault(x => x.Id == propertyId);
+            var propertiesToUpdate = this._context.RealEstateProperties.ToList();
+
+            foreach (var property in propertiesToUpdate)
+            {
+                await this.UpdateTags(property);
+            }
+        }
+
+        public async Task UpdateTags(RealEstateProperty property)
+        {
             property.Tags.Clear();
 
             if (property.Year.HasValue && property.Year < 1990)
@@ -115,7 +153,7 @@ namespace Services
                 property.Tags.Add(new RealEstatePropertyTag { Tag = this.GetOrCreateTag("ExpensiveApartment") });
             }
 
-            await this._context.SaveChangesAsync();
+            this._context.SaveChangesAsync();
         }
 
         private Tag GetOrCreateTag(string tagName)
@@ -178,6 +216,12 @@ namespace Services
                 District = x.District.Name,
                 Url = x.Url
             };
+        }
+
+        private string PropertyToString(RealEstateProperty property, long TimeSpan)
+        {
+            return $"District: {property.District.Name} ({property.Floor}/{property.TotalNumberOfFloors})," +
+                   $" {property.Year}, {property.Size}m2, Price: {property.Price} ({TimeSpan} ticks.)";
         }
     }
 }

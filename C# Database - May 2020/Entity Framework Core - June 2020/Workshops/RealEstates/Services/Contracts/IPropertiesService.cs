@@ -7,13 +7,15 @@ namespace Services.Contracts
 {
     public interface IPropertiesService
     {
-        Task<PropertyViewModel> Create(PropertyCreateDto models);
+        Task SingleInsert(PropertyCreateDto model);
+
+        Task BulkInsert(PropertyCreateDto[] models);
 
         bool Delete(int Id);
 
         bool Update(int Id);
 
-        Task UpdateTags(int propertyId);
+        Task UpdateTags(RealEstateProperty property);
 
         public Task<IEnumerable<PropertyViewModel>> GetAll(int count);
 

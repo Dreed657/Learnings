@@ -3,12 +3,11 @@ using Newtonsoft.Json;
 using Services;
 using Services.DataTransferObject;
 using System;
-using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Importer
@@ -19,52 +18,42 @@ namespace Importer
         {
             Console.OutputEncoding = Encoding.UTF8;
             var db = new RealEstateDbContext();
-            //db.Database.EnsureDeleted();
-            //db.Database.EnsureCreated();
+            await db.Database.EnsureDeletedAsync();
+            await db.Database.EnsureCreatedAsync();
 
-            var data = File.ReadAllText("imot.bg-raw-data-2020-07-23.json");
-            var properties = JsonConvert.DeserializeObject<JsonProperty[]>(data);
+            var data = await File.ReadAllTextAsync("imot.bg-raw-data-2020-07-23.json");
+            var properties = JsonConvert.DeserializeObject<List<JsonProperty>>(data);
             var propertyService = new PropertiesService(db);
 
+            var timer = new Stopwatch();
+            timer.Start();
+
             await InsertToDb(propertyService, properties);
+
+            propertyService.BulkUpdateTags();
+
+            timer.Stop();
+            Console.WriteLine($"Time spend on this task: {timer.ElapsedMilliseconds / 1000}!");
         }
 
-        private static async Task InsertToDb(PropertiesService propertyService, JsonProperty[] properties)
+        private static async Task InsertToDb(PropertiesService propertyService, IEnumerable<JsonProperty> properties)
         {
-            foreach (var property in properties.Where(x => x.Price > 500))
-            {
-                var timer = new Stopwatch();
-
-                try
+            var converted = properties
+                .Select(property => new PropertyCreateDto
                 {
-                    timer.Start();
+                    District = property.District,
+                    Size = property.Size,
+                    Year = property.Year,
+                    Price = property.Price,
+                    Url = property.Url,
+                    PropertyType = property.Type,
+                    BuildingType = property.BuildingType,
+                    Floor = property.Floor,
+                    MaxFloors = property.TotalFloors
+                })
+                .ToArray();
 
-                    var createModel = new PropertyCreateDto
-                    {
-                        District = property.District,
-                        Size = property.Size,
-                        Year = property.Year,
-                        Price = property.Price,
-                        Url = property.Url,
-                        PropertyType = property.Type,
-                        BuildingType = property.BuildingType,
-                        Floor = property.Floor,
-                        MaxFloors = property.TotalFloors
-                    };
-
-                    await propertyService.Create(createModel);
-
-                    timer.Stop();
-
-                    var propertyInfo = $"District: {property.District} ({property.Floor}/{property.TotalFloors}), {property.Year}, {property.Size}m2, Price: {property.Price}";
-
-                    Console.WriteLine($"Created: {propertyInfo}. ({timer.ElapsedMilliseconds}ms)");
-                }
-                catch (Exception)
-                {
-                    // ignored
-                }
-            }
+            await propertyService.BulkInsert(converted);
         }
     }
 }
