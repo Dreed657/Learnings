@@ -23,7 +23,7 @@ namespace Services
 
         public async Task SingleInsert(PropertyCreateDto model)
         {
-            var property = await this.Create(model);
+            var property = this.Create(model);
             await this._context.RealEstateProperties.AddAsync(property);
         }
 
@@ -40,7 +40,7 @@ namespace Services
                 timer.Start();
                 count++;
 
-                var property = await this.Create(dto);
+                var property = this.Create(dto);
                 convertedProperties.Add(property);
                 
                 timer.Stop();
@@ -54,12 +54,19 @@ namespace Services
             await this._context.SaveChangesAsync();
         }
 
-        private async Task<RealEstateProperty> Create(PropertyCreateDto model)
+        public async Task<PropertyViewModel> CreateOne(PropertyCreateDto model)
         {
-            if (model.District == null)
-            {
-                throw new ArgumentException("District was null");
-            }
+            var property = this.Create(model);
+
+            await this._context.RealEstateProperties.AddAsync(property);
+            await this._context.SaveChangesAsync();
+
+            return this.SingleMapToPropertyViewModel(property);
+        }
+
+        private RealEstateProperty Create(PropertyCreateDto model)
+        {
+            if (model.District == null) throw new ArgumentException("District was null");
 
             var property = new RealEstateProperty()
             {
@@ -188,6 +195,11 @@ namespace Services
                 .ToListAsync();
         }
 
+        public int Count()
+        {
+            return this._context.RealEstateProperties.Count();
+        }
+
         private static Expression<Func<RealEstateProperty, PropertyViewModel>> MapToPropertyViewModel()
         {
             return x => new PropertyViewModel
@@ -203,7 +215,7 @@ namespace Services
             };
         }
 
-        private static PropertyViewModel SingleMapToPropertyViewModel(RealEstateProperty x)
+        private PropertyViewModel SingleMapToPropertyViewModel(RealEstateProperty x)
         {
             return new PropertyViewModel
             {
@@ -221,7 +233,7 @@ namespace Services
         private string PropertyToString(RealEstateProperty property, long TimeSpan)
         {
             return $"District: {property.District.Name} ({property.Floor}/{property.TotalNumberOfFloors})," +
-                   $" {property.Year}, {property.Size}m2, Price: {property.Price} ({TimeSpan} ticks.)";
+                   $" {property.Year}, {property.Size}m2, Price: {property.Price} ({TimeSpan} ticks)";
         }
     }
 }

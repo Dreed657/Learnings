@@ -11,6 +11,8 @@ namespace Services.Contracts
 
         Task BulkInsert(PropertyCreateDto[] models);
 
+        Task<PropertyViewModel> CreateOne(PropertyCreateDto model);
+
         bool Delete(int Id);
 
         bool Update(int Id);
@@ -22,5 +24,7 @@ namespace Services.Contracts
         Task<IEnumerable<PropertyViewModel>> Search(int minYear, int maxYear, int minSize, int maxSize);
 
         Task<IEnumerable<PropertyViewModel>> SearchByPrice(int minPrice, int maxPrice);
+
+        int Count();
     }
 }

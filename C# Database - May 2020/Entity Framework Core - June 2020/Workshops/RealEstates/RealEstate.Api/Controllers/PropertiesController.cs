@@ -35,7 +35,7 @@ namespace RealEstate.Api.Controllers
         [HttpPost]
         public ActionResult<PropertyViewModel> Create(PropertyCreateDto model)
         {
-            var result = this._propertiesService.Create(model).Result;
+            var result = this._propertiesService.CreateOne(model);
 
             return Ok(result);
         }

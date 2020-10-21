@@ -33,7 +33,7 @@ namespace Importer
             propertyService.BulkUpdateTags();
 
             timer.Stop();
-            Console.WriteLine($"Time spend on this task: {timer.ElapsedMilliseconds / 1000}!");
+            Console.WriteLine($"Time spend on this task: {timer.Elapsed}!");
         }
 
         private static async Task InsertToDb(PropertiesService propertyService, IEnumerable<JsonProperty> properties)

@@ -20,6 +20,19 @@ namespace Services
             this.db = db;
         }
 
+        public async Task<IEnumerable<District>> GetAll(int count)
+        {
+            return await this.db.Districts
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<string>> GetAllNames()
+        {
+            return await this.db.Districts
+                .Select(x => x.Name)
+                .ToListAsync();
+        }
+
         public async Task<IEnumerable<DistrictViewModel>> GetTopDistrictsByAveragePrice(int count = 10)
         {
             return await this.db.Districts

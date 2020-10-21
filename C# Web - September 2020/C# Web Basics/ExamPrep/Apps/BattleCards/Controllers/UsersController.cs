@@ -1,0 +1,120 @@
+﻿using BattleCards.Services;
+using SUS.HTTP;
+using SUS.MvcFramework;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace BattleCards.Controllers
+{
+    public class UsersController : Controller
+    {
+        private readonly IUsersService usersService;
+
+        public UsersController(IUsersService usersService)
+        {
+            this.usersService = usersService;
+        }
+
+        [HttpGet]
+        public HttpResponse Login()
+        {
+            if(this.IsUserSignedIn())
+            {
+                return this.Redirect("/cards/all");
+            }
+
+            return this.View();
+        }
+
+        [HttpPost]
+        public HttpResponse Login(string username, string password)
+        {
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect("/");
+            }
+
+            var userId = this.usersService.GetUserId(username, password);
+            if (userId == null)
+            {
+                return this.Error("Invalid login credentials.");
+            }
+
+            this.SignIn(userId);
+            return this.Redirect("/cards/all");
+        }
+
+        [HttpGet]
+        public HttpResponse Register()
+        {
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect("/cards/all");
+            }
+
+            return this.View();
+        }
+
+        [HttpPost]
+        public HttpResponse Register(string username, string email, string password, string confirmPassword)
+        {
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect("/");
+            }
+
+            if (username == null || username.Length < 5 || username.Length > 20)
+            {
+                return this.Error("Invalid username. The username should be between 5 and 20 characters.");
+            }
+
+            if (!Regex.IsMatch(username, @"^[a-zA-Z0-9\.]+$"))
+            {
+                return this.Error("Invalid username. Only alphanumeric characters are allowed.");
+            }
+
+            if (string.IsNullOrWhiteSpace(email) || !new EmailAddressAttribute().IsValid(email))
+            {
+                return this.Error("Invalid email.");
+            }
+
+            if (password == null || password.Length < 6 || password.Length > 20)
+            {
+                return this.Error("Invalid password. The password should be between 6 and 20 characters.");
+            }
+
+            if (password != confirmPassword)
+            {
+                return this.Error("Passwords should be the same.");
+            }
+
+            if (!this.usersService.IsUsernameAvailable(username))
+            {
+                return this.Error("Username already taken.");
+            }
+
+            if (!this.usersService.IsEmailAvailable(email))
+            {
+                return this.Error("Email already taken.");
+            }
+
+            this.usersService.CreateUser(username, email, password);
+            return this.Redirect("/Users/Login");
+        }
+
+        [HttpGet("/logout")]
+        public HttpResponse Logout()
+        {
+            if (!this.IsUserSignedIn())
+            {
+                return this.Error("Only logged-in users can logout.");
+            }
+
+            this.SignOut();
+            return this.Redirect("/");
+        }
+    }
+}
