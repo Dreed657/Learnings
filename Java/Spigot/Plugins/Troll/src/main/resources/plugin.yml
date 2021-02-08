@@ -1,0 +1,9 @@
+name: testPlugin001
+version: 1.0
+main: me.troll.troll.Troll
+api-version: 1.16
+authors: [ Random ]
+description: Random
+commands:
+  test:
+    description: Random Test Command
