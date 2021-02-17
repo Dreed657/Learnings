@@ -106,12 +106,10 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
-.background-img {
-    background: url("../../static/img/hotel.jpg") no-repeat;
-    background-size: cover;
-    margin: auto;
-    min-height: 500px;
+.error {
+    padding: 10px;
+    background-color: red;
+    color: white;
 }
 
 .guest {
