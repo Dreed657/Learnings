@@ -3,21 +3,22 @@
     <div class="hotel-ticket">
         <div class="hotel-left">
             <img
-                src="https://image.freepik.com/free-vector/flat-hotel-building-town_52683-10040.jpg"
+                src="{{hotel.ImageUrl}}"
                 alt="">
         </div>
         <div class="hotel-right">
             <div>
-                <h3>Auckland Inn</h3>
+                <h3>{{hotel.Name}}</h3>
             </div>
             <div>
-                Auckland
+                {{hotel.City}}
             </div>
-            <p><span>Free rooms: 43</span> </p>
-            <p><span class="green">You already have booked a room</span> </p>
+            <p><span>Free rooms: {{hotel.FreeRooms}}</span> </p>
 
-            <a href="create" class="book">Book</a>
-            <a href="edit" class="edit">Edit</a>
+            {{!-- <p><span class="green">You already have booked a room</span> </p> --}}
+
+            <a href="/hotel/book/{{hotel._id}}" class="book">Book</a>
+            <a href="/hotel/edit/{{hotel._id}}" class="edit">Edit</a>
             <a href="delete" class="remove">Delete</a>
         </div>
 

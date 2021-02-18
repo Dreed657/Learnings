@@ -111,7 +111,12 @@ footer {
     background-color: red;
     color: white;
 }
-
+.background-img {
+    background: url("/img/hotel.jpg") no-repeat;
+    background-size: cover;
+    margin: auto;
+    min-height: 500px;
+}
 .guest {
     text-align: center;
     color: white;

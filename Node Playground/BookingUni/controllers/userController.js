@@ -49,12 +49,18 @@ router.post('/register', isGuest, async (req, res) => {
 })
 
 router.get('/logout', isAuthenticated, (req, res) => {
+    console.warn('asdasdasdasadgad');
     res.clearCookie(COOKIE_NAME);
-    res.redirect('/');
+    res.redirect('/', { username: req.user.username });
 });
 
-router.get('/profile', (req, res) => {
-    res.render('user/profile');
+router.get('/profile', isAuthenticated, async (req, res) => {
+    let user = await userService.getOne(req.user._id);
+    
+    console.log(user);
+
+    res.render('user/profile', { user, username: req.user.username });
 });
+
 
 module.exports = router;

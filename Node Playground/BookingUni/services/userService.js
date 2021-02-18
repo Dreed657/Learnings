@@ -1,7 +1,14 @@
 const User = require('../models/user');
+const Hotel = require('../models/hotel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { SECRET } = require('../config/index');
+
+async function getOne(id) {
+    return await User.findById(id)
+        .populate('BookedHotels')
+        .lean();
+}
 
 async function login({ username, password }) {
     let user = await User.findOne({ Username: username });
@@ -34,7 +41,18 @@ async function register({Email, Username, Password}) {
     return await user.save();
 }
 
+async function bookHotel(hotelId, userId){
+    let hotel = await Hotel.findById(hotelId);
+    let user = await User.findById(userId);
+
+    user.BookedHotels.push(hotel._id);
+    hotel.Users.push(user._id);
+    return await user.save();
+}
+
 module.exports = {
     login,
-    register
+    register,
+    getOne,
+    bookHotel,
 };

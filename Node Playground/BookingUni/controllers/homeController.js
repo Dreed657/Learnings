@@ -7,7 +7,7 @@ const router = Router();
 router.get('/', (req, res) => {
     hotelService.getAll()
         .then(hotels => {
-            res.render('index', { hotels });
+            res.render('index', { hotels, username: req.user?.username });
         })
         .catch(() => res.status(500).end());
 });

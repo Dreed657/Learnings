@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>BookingUni</title>
+        <title>Booking Uni</title>
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
@@ -16,8 +16,8 @@
                 </div>
                 <div class="right-container">
                     {{#if isAuthenticated}}
-                        <a href="" class="log-out">{{name}}</a>
-                        <a href="" class="log-out">Logout</a>
+                        <a href="/user/profile" class="log-out">{{username}}</a>
+                        <a href="/user/logout" class="log-out">Logout</a>
                     {{else}}
                         <a href="/user/login" class="log-out">Login</a>
                         <a href="/user/register" class="log-out">Register</a>
