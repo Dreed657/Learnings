@@ -40,7 +40,7 @@ namespace WarCroft.Core
             }
 
 			this._party.Add(character);
-            return $"{name} joined the party!";
+            return string.Format(SuccessMessages.JoinParty, name);
         }
 
 		public string AddItemToPool(string[] args)
@@ -60,7 +60,7 @@ namespace WarCroft.Core
             }
 
             this._items.Enqueue(item);
-            return $"{itemName} added to pool.";
+            return string.Format(SuccessMessages.AddItemToPool, itemName);
 		}
 
 		public string PickUpItem(string[] args)
@@ -81,7 +81,7 @@ namespace WarCroft.Core
             var item = this._items.Dequeue();
             character.Bag.AddItem(item);
 
-            return $"{characterName} picked up {nameof(item)}!";
+            return string.Format(SuccessMessages.PickUpItem, character.Name, nameof(item));
         }
 
 		public string UseItem(string[] args)
@@ -99,14 +99,14 @@ namespace WarCroft.Core
             var item = character.Bag.GetItem(itemName);
             character.UseItem(item);
 
-            return $"{character.Name} used {itemName}.";
+            return string.Format(SuccessMessages.UsedItem, character.Name, nameof(item));
         }
 
         public string GetStats()
         {
             var sb = new StringBuilder();
 
-            foreach (var character in this._party)
+            foreach (var character in this._party.OrderByDescending(x => x.IsAlive).ThenByDescending(x => x.Health))
             {
                 sb.AppendLine(character.ToString());
             }
@@ -141,13 +141,13 @@ namespace WarCroft.Core
 
             attacker.Attack(receiver);
 
-            sb.AppendLine(
-                $"{attacker.Name} attacks {receiver.Name} for {attacker.AbilityPoints} hit points! {receiver.Name} " +
-                $"has {receiver.Health}/{receiver.BaseHealth} HP and {receiver.Armor}/{receiver.BaseArmor} AP left!");
+            sb.AppendLine(string.Format(SuccessMessages.AttackCharacter, attacker.Name, receiver.Name,
+                attacker.AbilityPoints, receiver.Name, receiver.Health, receiver.BaseHealth, receiver.Armor,
+                receiver.BaseArmor));
 
             if (!receiver.IsAlive)
             {
-                sb.AppendLine($"{receiver.Name} is dead!");
+                sb.AppendLine(string.Format(SuccessMessages.AttackKillsCharacter, receiver.Name));
             }
             
             return sb.ToString().Trim();
@@ -177,7 +177,8 @@ namespace WarCroft.Core
 
             healer.Heal(healingReceiver);
 
-            return $"{healer.Name} heals {healingReceiver.Name} for {healer.AbilityPoints}! {healingReceiver.Name} has {healingReceiver.Health} health now!";
+            return string.Format(SuccessMessages.HealCharacter, healer.Name, healingReceiver.Name, healer.AbilityPoints,
+                healingReceiver.Name, healingReceiver.Health);
         }
 	}
 }

@@ -14,16 +14,16 @@ export const Home = () => {
     }, []);
 
     return (
-        <>
+        <div>
             {notes.length > 0 ? (
-                <>
+                <div>
                     { notes.map(note => (
-                        <Note _id={note._id} title={note.title} content={note.content} />
+                        <Note key={note._id} _id={note._id} title={note.title} content={note.content} />
                     ))}
-                </>
+                </div>
             ) : (
                     <h4 className="text-center">No Notes</h4>
                 )}
-        </>
+        </div>
     )
 }

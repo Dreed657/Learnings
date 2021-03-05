@@ -12,7 +12,7 @@ export const AddNote = () => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:3000/notes', {title, content});
+        axios.post('http://localhost:3000/notes', { title, content });
 
         history.push('/');
     }
@@ -27,17 +27,19 @@ export const AddNote = () => {
 
 
     return (
-        <Form onSubmit={onSubmit}>
-            <FormGroup>
-                <Label>Title</Label>
-                <Input type="text" value={title} onChange={onTitleChange} name="title" placeholder="Title" required></Input>
-            </FormGroup>
-            <FormGroup>
-                <Label>Content</Label>
-                <Input type="text" value={content} onChange={onContentChange} name="content" placeholder="Content" required></Input>
-            </FormGroup>
-            <Button type="submit">Add to the list</Button>
-            <Link to="/" className="btn btn-danger ml-2">Cancel</Link>
-        </Form>
+        <div className="py-2">
+            <Form onSubmit={onSubmit}>
+                <FormGroup>
+                    <Label>Title</Label>
+                    <Input type="text" value={title} onChange={onTitleChange} name="title" placeholder="Title" required></Input>
+                </FormGroup>
+                <FormGroup>
+                    <Label>Content</Label>
+                    <Input type="text" value={content} onChange={onContentChange} name="content" placeholder="Content" required></Input>
+                </FormGroup>
+                <Button type="submit">Add to the list</Button>
+                <Link to="/" className="btn btn-danger ml-2">Cancel</Link>
+            </Form>
+        </div>
     )
 }

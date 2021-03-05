@@ -6,6 +6,7 @@ import { Button, Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 export const SingleNote = (props) => {
     const [note, setNote] = useState({
+        id: String,
         title: 'Untitled note',
         content: 'Random content',
         createdAt: null
@@ -27,7 +28,7 @@ export const SingleNote = (props) => {
     }
 
     return (
-        <div>
+        <div className="w-50 mx-auto my-2">
             <Card body>
                 <CardTitle tag="h5">{note.title}</CardTitle>
                 <CardText>

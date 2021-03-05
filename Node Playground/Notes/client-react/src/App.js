@@ -8,17 +8,17 @@ import { SingleNote } from './components/singleNote';
 
 function App() {
   return (
-    <div style={{ maxWidth: "30rem", margin: "0px auto" }}>
-      <Router>
-        <Navigation/>
+    <Router>
+      <Navigation />
+      <div className="container">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/add" component={AddNote} />
           <Route path="/edit/:id" component={EditNote} />
           <Route path="/note/:id" component={SingleNote} />
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

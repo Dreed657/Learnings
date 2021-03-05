@@ -43,7 +43,7 @@ namespace WarCroft.Entities.Characters.Contracts
             get => this._health;
             set
             {
-                if (value > 0 && value <= this.BaseHealth)
+                if (value >= 0 && value <= this.BaseHealth)
                 {
                     this._health = value;
                 }
@@ -55,7 +55,7 @@ namespace WarCroft.Entities.Characters.Contracts
             get => this._armor;
             set
             {
-                if (value > 0)
+                if (value >= 0)
                 {
                     this._armor = value;
                 }
@@ -82,44 +82,53 @@ namespace WarCroft.Entities.Characters.Contracts
 
         public void TakeDamage(double hitPoints)
         {
-            if (this.IsAlive)
+            this.EnsureAlive();
+
+            var hitPointsLeft = hitPoints;
+
+            if (this.Armor > 0)
             {
-                if (this.Armor > 0)
+                if (this.Armor <= hitPoints)
                 {
-                    var armor = this.Armor;
-
-                    if (armor - hitPoints < 0)
-                    {
-                        hitPoints = Math.Abs(hitPoints);
-                    }
-                    else
-                    {
-                        this.Armor -= hitPoints;
-                    }
-
-                    if (hitPoints > 0)
-                    {
-                        this.Health -= hitPoints;
-                    }
+                    hitPointsLeft = Math.Abs(this.Armor - hitPoints);
+                    this.Armor = 0;
                 }
-
-                if (this.Health < 0)
+                else
                 {
+                    this.Armor -= hitPoints;
+                    hitPointsLeft = 0;
+                }
+            }
+
+            if (hitPointsLeft > 0)
+            {
+                if (this.Health - hitPointsLeft > 0)
+                {
+                    this.Health -= hitPointsLeft;
+                }
+                else
+                {
+                    this.Health = 0;
                     this.IsAlive = false;
                 }
+            }
+
+            if (this.Health <= 0)
+            {
+                this.IsAlive = false;
             }
         }
 
         public void UseItem(Item item)
         {
+            this.EnsureAlive();
+
             item.AffectCharacter(this);
         }
 
         public override string ToString()
         {
-            var status = this.IsAlive ? "Alive" : "Dead";
-
-            return $"{this.Name} - HP: {this.Health}/{this.BaseHealth}, AP: {this.Armor}/{this.BaseArmor}, Status: {status}";
+            return string.Format(SuccessMessages.CharacterStats, this.Name, this.Health, this.BaseHealth, this.Armor, this.BaseArmor, this.IsAlive ? "Alive" : "Dead");
         }
     }
 }
