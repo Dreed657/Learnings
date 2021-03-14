@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScraprerTests", "WebScraprerTests\WebScraprerTests.csproj", "{96127EF9-DEFD-4C39-90D0-453C7CCBEEDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebScraprerTests", "WebScraprerTests\WebScraprerTests.csproj", "{96127EF9-DEFD-4C39-90D0-453C7CCBEEDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpinWords", "..\SpinWords\SpinWords.csproj", "{F82E7105-90E1-4BB2-B26D-E83212AFED7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpinWords.Tests", "SpinWords.Tests\SpinWords.Tests.csproj", "{106BE060-791E-48F6-9AC2-691165B51957}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{96127EF9-DEFD-4C39-90D0-453C7CCBEEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96127EF9-DEFD-4C39-90D0-453C7CCBEEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96127EF9-DEFD-4C39-90D0-453C7CCBEEDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F82E7105-90E1-4BB2-B26D-E83212AFED7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82E7105-90E1-4BB2-B26D-E83212AFED7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82E7105-90E1-4BB2-B26D-E83212AFED7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82E7105-90E1-4BB2-B26D-E83212AFED7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{106BE060-791E-48F6-9AC2-691165B51957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{106BE060-791E-48F6-9AC2-691165B51957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{106BE060-791E-48F6-9AC2-691165B51957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{106BE060-791E-48F6-9AC2-691165B51957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
