@@ -1,0 +1,11 @@
+Model Information:
+* title:	Friday Night Funkin' - VS Whitty
+* source:	https://sketchfab.com/3d-models/friday-night-funkin-vs-whitty-f40c4695ea004e8ea216c85622e7bfc6
+* author:	Cally3D (https://sketchfab.com/Cally3D)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Friday Night Funkin' - VS Whitty" (https://sketchfab.com/3d-models/friday-night-funkin-vs-whitty-f40c4695ea004e8ea216c85622e7bfc6) by Cally3D (https://sketchfab.com/Cally3D) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pestkapelle
+* source:	https://sketchfab.com/3d-models/pestkapelle-18eec9bab9564c53b2a298feac59aa0d
+* author:	noe-3d.at (https://sketchfab.com/www.noe-3d.at)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pestkapelle" (https://sketchfab.com/3d-models/pestkapelle-18eec9bab9564c53b2a298feac59aa0d) by noe-3d.at (https://sketchfab.com/www.noe-3d.at) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

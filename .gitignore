@@ -244,3 +244,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 Java/Spigot/Localhost/
+
+Node Playground/plain three js testing/models/
