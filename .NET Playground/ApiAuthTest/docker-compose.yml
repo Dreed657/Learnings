@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+    webMVC:
+        container_name: restMVC
+        image: aspnetapp
+        build: 
+            context: ./WebMvc
+        ports:
+            - "5001:80"
+        restart: on-failure
+        networks:
+            - authtest-network
+
+    data:
+        container_name: authsqlserver
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        ports: 
+            - "1433:1433"
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=yourStrongPassword12!@
+        networks: 
+            - carrentalsystem-network
+
+networks:
+    authtest-network:

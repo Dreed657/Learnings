@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiAuthTest", "ApiAuthTest\ApiAuthTest.csproj", "{FE3C3801-A32C-40B2-8F1E-6AC6782C81B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMvc", "WebMvc\WebMvc.csproj", "{87762437-9B7F-45CC-904E-63F8ADA589FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE3C3801-A32C-40B2-8F1E-6AC6782C81B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3C3801-A32C-40B2-8F1E-6AC6782C81B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3C3801-A32C-40B2-8F1E-6AC6782C81B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3C3801-A32C-40B2-8F1E-6AC6782C81B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87762437-9B7F-45CC-904E-63F8ADA589FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87762437-9B7F-45CC-904E-63F8ADA589FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87762437-9B7F-45CC-904E-63F8ADA589FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87762437-9B7F-45CC-904E-63F8ADA589FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08E33C56-0030-49A9-ABFB-DA0FA4C3357E}
+	EndGlobalSection
+EndGlobal
