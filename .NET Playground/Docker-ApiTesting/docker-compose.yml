@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+    web:
+        container_name: server
+        image: dockerapitesting:dev
+        ports:
+            - "80:5001"
