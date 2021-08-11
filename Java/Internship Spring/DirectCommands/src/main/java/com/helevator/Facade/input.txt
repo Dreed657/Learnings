@@ -1,0 +1,7 @@
+set humpty string alice
+get humpty
+get dumpty
+set iter number 5
+calc humpty humpty + iter
+get humpty
+exit

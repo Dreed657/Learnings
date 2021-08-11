@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.helecloud.Repositories.BookRepositoryTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-08-10T16:44:03" hostname="dreed-pc" time="0.057">
+  <properties/>
+  <testcase name="deleteShouldReturnFalseIfNotSuccessful()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.001"/>
+  <testcase name="saveShouldThrowExceptionWhenProvidedInvalidEntityId()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.005"/>
+  <testcase name="saveShouldAddCorrectly()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.005"/>
+  <testcase name="saveShouldThrowExceptionWhenProvidedInvalidEntity()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.001"/>
+  <testcase name="getAll()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.004"/>
+  <testcase name="getById()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.004"/>
+  <testcase name="deleteShouldReturnTrueIfSuccessful()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.01"/>
+  <testcase name="getByIdShouldReturnNullIfDoesNotExists()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.003"/>
+  <testcase name="updateShouldThrowExceptionWhenProvidedInvalidEntityId()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.004"/>
+  <testcase name="updateShouldThrowExceptionWhenProvidedInvalidEntity()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.001"/>
+  <testcase name="updateShouldUpdateEntityCorrectly()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.003"/>
+  <testcase name="updateShouldReturnNullIfEntityNotFound()" classname="com.helecloud.Repositories.BookRepositoryTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

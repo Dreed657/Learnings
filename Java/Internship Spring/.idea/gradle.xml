@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ADS" />
+            <option value="$PROJECT_DIR$/DBS" />
+            <option value="$PROJECT_DIR$/DirectCommands" />
+            <option value="$PROJECT_DIR$/GarbageWars" />
+            <option value="$PROJECT_DIR$/HelloWorldExample" />
+            <option value="$PROJECT_DIR$/Networking" />
+            <option value="$PROJECT_DIR$/OOP" />
+            <option value="$PROJECT_DIR$/Patterns" />
+            <option value="$PROJECT_DIR$/Queue" />
+            <option value="$PROJECT_DIR$/Threading" />
+            <option value="$PROJECT_DIR$/spring-testing" />
+            <option value="$PROJECT_DIR$/springDemo" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

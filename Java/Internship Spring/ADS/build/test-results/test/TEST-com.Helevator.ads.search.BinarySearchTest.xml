@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.Helevator.ads.search.BinarySearchTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-08T20:51:23" hostname="dreed-pc" time="0.004">
+  <properties/>
+  <testcase name="testContainsShouldReturnFalseIfElementIsNotFound()" classname="com.Helevator.ads.search.BinarySearchTest" time="0.001"/>
+  <testcase name="testContainsShouldThrowExceptionIfArrayIsNull()" classname="com.Helevator.ads.search.BinarySearchTest" time="0.002"/>
+  <testcase name="testContainsShouldReturnTrueIsElementIsFound()" classname="com.Helevator.ads.search.BinarySearchTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

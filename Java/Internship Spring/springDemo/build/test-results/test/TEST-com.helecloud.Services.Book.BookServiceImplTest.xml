@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.helecloud.Services.Book.BookServiceImplTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-08-10T16:43:53" hostname="dreed-pc" time="0.556">
+  <properties/>
+  <testcase name="deleteShouldReturnFalseIfNotSuccessful()" classname="com.helecloud.Services.Book.BookServiceImplTest" time="0.304"/>
+  <testcase name="getAllWithIds()" classname="com.helecloud.Services.Book.BookServiceImplTest" time="0.165"/>
+  <testcase name="getAll()" classname="com.helecloud.Services.Book.BookServiceImplTest" time="0.018"/>
+  <testcase name="update()" classname="com.helecloud.Services.Book.BookServiceImplTest" time="0.021"/>
+  <testcase name="getById()" classname="com.helecloud.Services.Book.BookServiceImplTest" time="0.001"/>
+  <testcase name="save()" classname="com.helecloud.Services.Book.BookServiceImplTest" time="0.02"/>
+  <testcase name="deleteShouldReturnTrueIfSuccessful()" classname="com.helecloud.Services.Book.BookServiceImplTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.helecloud.DbTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-10T10:50:32" hostname="dreed-pc" time="0.026">
+  <properties/>
+  <testcase name="testGetEmp()" classname="com.helecloud.DbTest" time="0.026"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Aug 10, 2021 1:50:32 PM com.helecloud.EmpRepository getEmp
+INFO: RECEIVED: Emp{eid=1, ename='Test', sal=3, deptId=4}
+Aug 10, 2021 1:50:32 PM com.helecloud.EmpRepository getEmp
+INFO: RECEIVED: Emp{eid=1, ename='Test', sal=3, deptId=4}
+]]></system-err>
+</testsuite>

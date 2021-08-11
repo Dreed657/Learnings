@@ -1,0 +1,29 @@
+plugins {
+    id 'application'
+    id "org.springframework.boot" version "2.5.0"
+    id 'com.adarshr.test-logger' version '3.0.0'
+}
+
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+application {
+    mainClass = "com.helevator.foldertraversal.app"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.named('test') {
+    // Use junit platform for unit tests.
+    useJUnitPlatform()
+}

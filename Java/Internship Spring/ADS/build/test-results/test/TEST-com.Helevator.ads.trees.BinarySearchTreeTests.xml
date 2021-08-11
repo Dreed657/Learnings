@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.Helevator.ads.trees.BinarySearchTreeTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-08T20:51:23" hostname="dreed-pc" time="0.014">
+  <properties/>
+  <testcase name="testAddInTree()" classname="com.Helevator.ads.trees.BinarySearchTreeTests" time="0.012"/>
+  <testcase name="testContainsShouldReturnTrueIfFound()" classname="com.Helevator.ads.trees.BinarySearchTreeTests" time="0.0"/>
+  <testcase name="testContainsShouldReturnFalseIfNotFound()" classname="com.Helevator.ads.trees.BinarySearchTreeTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

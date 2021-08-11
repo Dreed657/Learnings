@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.adarshr.test-logger' version '3.0.0'
+}
+
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+application {
+    mainClass = "com.Helevator.Client"
+}
+
+test {
+    useJUnitPlatform()
+}

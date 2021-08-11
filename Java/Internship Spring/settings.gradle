@@ -1,0 +1,13 @@
+rootProject.name = 'Helevator'
+include('HelloWorldExample')
+include('ADS')
+include('Queue')
+include('OOP')
+include('DirectCommands')
+include('Networking')
+include('GarbageWars')
+include('Threading')
+include('Patterns')
+include('DBS')
+include('springDemo')
+include('spring-testing')

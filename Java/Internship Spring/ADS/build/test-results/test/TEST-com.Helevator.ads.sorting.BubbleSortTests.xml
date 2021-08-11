@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.Helevator.ads.sorting.BubbleSortTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-08-08T20:51:23" hostname="dreed-pc" time="0.005">
+  <properties/>
+  <testcase name="testSimpleArray()" classname="com.Helevator.ads.sorting.BubbleSortTests" time="0.001"/>
+  <testcase name="testEmptyArray()" classname="com.Helevator.ads.sorting.BubbleSortTests" time="0.001"/>
+  <testcase name="testInversedArray()" classname="com.Helevator.ads.sorting.BubbleSortTests" time="0.001"/>
+  <testcase name="bubbleSortTestNull()" classname="com.Helevator.ads.sorting.BubbleSortTests" time="0.0"/>
+  <testcase name="testArrayOneElement()" classname="com.Helevator.ads.sorting.BubbleSortTests" time="0.001"/>
+  <testcase name="testSortedArray()" classname="com.Helevator.ads.sorting.BubbleSortTests" time="0.0"/>
+  <testcase name="testBigRandomArray()" classname="com.Helevator.ads.sorting.BubbleSortTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

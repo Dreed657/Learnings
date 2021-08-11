@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.helevator.Facade.impl.storage.CommandRepositoryTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-08-08T20:51:26" hostname="dreed-pc" time="0.016">
+  <properties/>
+  <testcase name="testAddShouldThrowsAnErrorIfProvideInvalidCommand()" classname="com.helevator.Facade.impl.storage.CommandRepositoryTest" time="0.004"/>
+  <testcase name="testAddShouldThrowsAnErrorIfAlreadyExists()" classname="com.helevator.Facade.impl.storage.CommandRepositoryTest" time="0.001"/>
+  <testcase name="testRemoveShouldWorkCorrectly()" classname="com.helevator.Facade.impl.storage.CommandRepositoryTest" time="0.001"/>
+  <testcase name="testAddWorksCorrectly()" classname="com.helevator.Facade.impl.storage.CommandRepositoryTest" time="0.001"/>
+  <testcase name="testGetByNameShouldThrowsAnErrorIfNotFound()" classname="com.helevator.Facade.impl.storage.CommandRepositoryTest" time="0.001"/>
+  <testcase name="testGetByNameWorksCorrectly()" classname="com.helevator.Facade.impl.storage.CommandRepositoryTest" time="0.001"/>
+  <testcase name="testRemoveShouldReturnTrueOnSuccess()" classname="com.helevator.Facade.impl.storage.CommandRepositoryTest" time="0.001"/>
+  <testcase name="testGetAllWorksCorrectly()" classname="com.helevator.Facade.impl.storage.CommandRepositoryTest" time="0.001"/>
+  <testcase name="testRemoveShouldThrowAnError()" classname="com.helevator.Facade.impl.storage.CommandRepositoryTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

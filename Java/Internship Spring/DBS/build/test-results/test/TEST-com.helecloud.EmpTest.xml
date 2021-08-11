@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.helecloud.EmpTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-08-10T10:50:32" hostname="dreed-pc" time="0.053">
+  <properties/>
+  <testcase name="getAll()" classname="com.helecloud.EmpTest" time="0.041"/>
+  <testcase name="getEid()" classname="com.helecloud.EmpTest" time="0.001"/>
+  <testcase name="getSal()" classname="com.helecloud.EmpTest" time="0.001"/>
+  <testcase name="testToString()" classname="com.helecloud.EmpTest" time="0.001"/>
+  <testcase name="getDeptId()" classname="com.helecloud.EmpTest" time="0.001"/>
+  <testcase name="testHashCode()" classname="com.helecloud.EmpTest" time="0.001"/>
+  <testcase name="testEquals()" classname="com.helecloud.EmpTest" time="0.001"/>
+  <testcase name="getEname()" classname="com.helecloud.EmpTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

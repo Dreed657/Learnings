@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.helecloud.Controllers.CarControllerIntegratedTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-10T16:44:02" hostname="dreed-pc" time="0.32">
+  <properties/>
+  <testcase name="getByIdShouldWorkCorrectly()" classname="com.helecloud.Controllers.CarControllerIntegratedTest" time="0.207"/>
+  <testcase name="deleteShouldReturnAnErrorIfNotFound()" classname="com.helecloud.Controllers.CarControllerIntegratedTest" time="0.018"/>
+  <testcase name="getByIdShouldReturnAnErrorIfNotFound()" classname="com.helecloud.Controllers.CarControllerIntegratedTest" time="0.018"/>
+  <testcase name="getAllShouldReturnAll()" classname="com.helecloud.Controllers.CarControllerIntegratedTest" time="0.042"/>
+  <testcase name="deleteShouldWorkCorrectly()" classname="com.helecloud.Controllers.CarControllerIntegratedTest" time="0.021"/>
+  <system-out><![CDATA[2021-08-10 19:44:01.351  INFO 130698 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.helecloud.Controllers.CarControllerIntegratedTest], using SpringBootContextLoader
+2021-08-10 19:44:01.352  INFO 130698 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.helecloud.Controllers.CarControllerIntegratedTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-08-10 19:44:01.352  INFO 130698 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.helecloud.Controllers.CarControllerIntegratedTest]: CarControllerIntegratedTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-08-10 19:44:01.365  INFO 130698 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.helecloud.Application for test class com.helecloud.Controllers.CarControllerIntegratedTest
+2021-08-10 19:44:01.367  INFO 130698 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-08-10 19:44:01.368  INFO 130698 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@374fcb81, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3b8868bb, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@10da0d4f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1c8fb0df, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@55d5630c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2de014bd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6d10c43b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@c78980e, org.springframework.test.context.event.EventPublishingTestExecutionListener@724b478e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5fa3f086, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@34f9c655, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7c09802c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5456df14, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@14b122d8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6e008575]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.0)
+
+2021-08-10 19:44:01.404  INFO 130698 --- [    Test worker] c.h.C.CarControllerIntegratedTest        : Starting CarControllerIntegratedTest using Java 11.0.11 on dreed-pc with PID 130698 (started by dreed657 in /home/dreed657/dev/helevator_2021/Stoyan/springDemo)
+2021-08-10 19:44:01.406  INFO 130698 --- [    Test worker] c.h.C.CarControllerIntegratedTest        : No active profile set, falling back to default profiles: default
+2021-08-10 19:44:01.624  INFO 130698 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-10 19:44:01.640  INFO 130698 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 3 JPA repository interfaces.
+2021-08-10 19:44:01.829  INFO 130698 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-10 19:44:01.834  INFO 130698 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-08-10 19:44:01.836  INFO 130698 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-08-10 19:44:01.837  INFO 130698 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-08-10 19:44:01.935  INFO 130698 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-10 19:44:01.935  INFO 130698 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-10 19:44:02.133  WARN 130698 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-10 19:44:02.430  INFO 130698 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-10 19:44:02.430  INFO 130698 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-10 19:44:02.432  INFO 130698 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-10 19:44:02.444  INFO 130698 --- [    Test worker] c.h.C.CarControllerIntegratedTest        : Started CarControllerIntegratedTest in 1.07 seconds (JVM running for 10.242)
+2021-08-10 19:44:02.444  INFO 130698 --- [    Test worker] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-08-10 19:44:02.445  INFO 130698 --- [    Test worker] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

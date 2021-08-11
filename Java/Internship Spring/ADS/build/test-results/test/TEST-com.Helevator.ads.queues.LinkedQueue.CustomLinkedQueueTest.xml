@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-08-08T20:51:23" hostname="dreed-pc" time="0.008">
+  <properties/>
+  <testcase name="testPollShouldWorkCorrectly()" classname="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" time="0.001"/>
+  <testcase name="testPollShouldDecreaseSize()" classname="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" time="0.0"/>
+  <testcase name="testPeekShouldReturnFirst()" classname="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" time="0.001"/>
+  <testcase name="testAddShouldIncreaseSize()" classname="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" time="0.0"/>
+  <testcase name="testPollAfterPollLastElementSizeShouldBeZero()" classname="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" time="0.0"/>
+  <testcase name="testAddShouldWorkCorrectly()" classname="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" time="0.001"/>
+  <testcase name="testPollShouldReturnZeroIfQueueIsEmpty()" classname="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" time="0.0"/>
+  <testcase name="testSizeShouldReturnCorrectly()" classname="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" time="0.0"/>
+  <testcase name="testPeekShouldReturnZeroIfQueueIsEmpty()" classname="com.Helevator.ads.queues.LinkedQueue.CustomLinkedQueueTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

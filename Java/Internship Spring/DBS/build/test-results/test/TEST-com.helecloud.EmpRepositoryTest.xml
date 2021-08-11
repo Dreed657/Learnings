@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.helecloud.EmpRepositoryTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-10T10:50:32" hostname="dreed-pc" time="0.247">
+  <properties/>
+  <testcase name="updateEmp()" classname="com.helecloud.EmpRepositoryTest" time="0.003"/>
+  <testcase name="getEmp()" classname="com.helecloud.EmpRepositoryTest" time="0.208"/>
+  <testcase name="getEmpById()" classname="com.helecloud.EmpRepositoryTest" time="0.031"/>
+  <testcase name="insertEmp()" classname="com.helecloud.EmpRepositoryTest" time="0.001"/>
+  <testcase name="deleteEmp()" classname="com.helecloud.EmpRepositoryTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Aug 10, 2021 1:50:32 PM com.helecloud.EmpRepository getEmp
+INFO: RECEIVED: Emp{eid=1, ename='Test', sal=3, deptId=4}
+Aug 10, 2021 1:50:32 PM com.helecloud.EmpRepository getEmp
+INFO: RECEIVED: Emp{eid=1, ename='Test', sal=3, deptId=4}
+Aug 10, 2021 1:50:32 PM com.helecloud.EmpRepository getEmpById
+INFO: RECEIVED: Emp{eid=1, ename='Name', sal=50, deptId=1}
+]]></system-err>
+</testsuite>
