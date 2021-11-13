@@ -1,0 +1,49 @@
+version: "3.7"
+services:
+  NBL:
+    container_name: load_balancer
+    image: local-nginx
+    ports:
+      - "80:80"
+    networks:
+      - test-network
+  server-1:
+    container_name: server1
+    image: simple-node
+    environment:
+      - PORT=4001
+    ports:
+      - "4001:4001"
+    networks:
+      - test-network
+  server-2:
+    container_name: server2
+    image: simple-node
+    environment:
+      - PORT=4002
+    ports:
+      - "4002:4002"
+    networks:
+      - test-network
+  server-3:
+    container_name: server3
+    image: simple-node
+    environment:
+      - PORT=4003
+    ports:
+      - "4003:4003"
+    networks:
+      - test-network
+  server-4:
+    container_name: server4
+    image: simple-node
+    environment:
+      - PORT=4004
+    ports:
+      - "4004:4004"
+    networks:
+      - test-network
+
+networks:
+  test-network:
+
