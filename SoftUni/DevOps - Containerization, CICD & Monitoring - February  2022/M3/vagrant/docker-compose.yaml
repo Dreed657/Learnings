@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+    web:
+        image: shekeriev/hw3-web
+        deploy:
+            replicas: 3
+        ports:
+            - 8080:80
+        networks:
+            - appnet
+        depends_on:
+            - db
+
+    db:
+        image: shekeriev/hw3-db
+        networks:
+            - appnet
+        environment:
+            MYSQL_ROOT_PASSWORD: "12345"
+
+networks:
+    appnet:
