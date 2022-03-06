@@ -1,0 +1,41 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    
+  config.ssh.insert_key = false
+
+  config.vm.define "node1" do |node1|
+    node1.vm.box="ubuntu/trusty64"
+    node1.vm.hostname = "node1.do1.lab"
+    node1.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "2048"]
+    end
+    node1.vm.network "private_network", ip: "192.168.56.101"
+	node1.vm.provision "shell", path: "add_hosts.sh"
+    node1.vm.provision "shell", path: "install_docker_debian.sh"
+  end
+
+  config.vm.define "node2" do |node2|
+    node2.vm.box="ubuntu/trusty64"
+    node2.vm.hostname = "node2.do1.lab"
+    node2.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "1536"]
+    end
+    node2.vm.network "private_network", ip: "192.168.56.102"
+	node2.vm.provision "shell", path: "add_hosts.sh"
+    node2.vm.provision "shell", path: "install_docker_debian.sh"
+  end
+  
+  config.vm.define "node3" do |node3|
+    node3.vm.box="centos/8"
+    node3.vm.hostname = "node3.do1.lab"
+    node3.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "1536"]
+    end
+    node3.vm.network "private_network", ip: "192.168.56.103"
+	node3.vm.provision "shell", path: "add_hosts.sh"
+    node3.vm.provision "shell", path: "install_docker_centos.sh"
+  end
+
+end
