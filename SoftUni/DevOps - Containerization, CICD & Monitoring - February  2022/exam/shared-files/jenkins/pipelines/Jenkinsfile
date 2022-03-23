@@ -1,0 +1,61 @@
+pipeline 
+{
+    agent {
+        label 'containers.do1.exam'
+    }
+
+    stages 
+    {
+        stage('Clone') 
+        {
+            steps 
+            {
+                git branch: 'main', url: 'http://192.168.56.202:3000/vagrant/exam'
+            }
+        }
+        stage('Build')
+        {
+            steps
+            {
+                sh 'cd client; docker image build -t img-client .'
+                sh 'cd generator; docker image build -t img-generator .'
+                sh 'cd storage; docker image build -t img-storage .'
+            }
+        }
+        stage('Run')
+        {
+            steps
+            {
+                sh 'docker container rm -f con-storage || true'
+                sh "docker container run -d --name con-storage --net app-net -e MYSQL_ROOT_PASSWORD='ExamPa\$\$w0rd' img-storage"
+                
+                sh 'docker container rm -f con-client || true'
+                sh 'docker container run -d --name con-client --net app-net -p 8080:5000 img-client'
+                
+                sh 'docker container rm -f con-generator || true'
+                sh 'docker container run -d --name con-generator --net app-net img-generator'
+            }
+        }
+        stage('Test')
+        {
+            steps
+            {
+                sh 'curl http://localhost:8080 || true'
+            }
+        }
+        stage('Deploy')
+        {
+            steps
+            {
+                sh "docker push dreed657/con-storage"
+                sh 'docker push dreed657/con-client'
+                sh 'docker push dreed657/con-generator'
+            }
+        }
+    }
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}

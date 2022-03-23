@@ -1,0 +1,10 @@
+apiVersion: 1
+
+providers:
+  - name: 'prod'
+    type: file
+    folder: 'pre-loaded'
+    updateIntervalSeconds: 10
+    options:
+      path: /vagrant/grafana/dashboards
+      foldersFromFilesStructure: true

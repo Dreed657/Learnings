@@ -1,0 +1,50 @@
+Vagrant.configure(2) do |config|
+    
+    config.ssh.insert_key = false
+  
+    config.vm.define "monitoring" do |monitoring|
+      monitoring.vm.box="ubuntu/focal64"
+      monitoring.vm.hostname = "monitoring.do1.exam"
+      monitoring.vm.network "forwarded_port", guest: 3000, host: 8082, auto_correct: true
+      monitoring.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "4096"]
+        vb.cpus = 4
+      end
+      monitoring.vm.network "private_network", ip: "192.168.56.203"
+      monitoring.vm.provision "shell", path: "scripts/update_hosts.sh"
+      monitoring.vm.provision "shell", path: "scripts/install_node3.sh"
+      monitoring.vm.synced_folder "shared-files/", "/vagrant"
+    end
+
+    config.vm.define "pipelines" do |pipelines|
+      pipelines.vm.box="ubuntu/focal64"
+      pipelines.vm.hostname = "pipelines.do1.exam"
+      pipelines.vm.network "forwarded_port", guest: 8080, host: 8080, auto_correct: true
+      pipelines.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "4096"]
+        vb.cpus = 4
+      end
+      pipelines.vm.network "private_network", ip: "192.168.56.201"
+      pipelines.vm.provision "shell", path: "scripts/update_hosts.sh"
+      pipelines.vm.provision "shell", path: "scripts/install_node1.sh"
+      pipelines.vm.provision "shell", path: "scripts/setup_jenkins.sh"
+      pipelines.vm.synced_folder "shared-files/", "/vagrant"
+    end
+  
+    config.vm.define "containers" do |containers|
+      containers.vm.box="ubuntu/focal64"
+      containers.vm.hostname = "containers.do1.exam"
+      containers.vm.network "forwarded_port", guest: 8080, host: 8081, auto_correct: true
+      containers.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "4096"]
+        vb.cpus = 4
+      end
+      containers.vm.network "private_network", ip: "192.168.56.202"
+      containers.vm.provision "shell", path: "scripts/update_hosts.sh"
+      containers.vm.provision "shell", path: "scripts/install_node2.sh"
+      containers.vm.provision "shell", path: "scripts/setup_gitea.sh"
+      containers.vm.synced_folder "shared-files/", "/vagrant"
+    end
+
+end
+  

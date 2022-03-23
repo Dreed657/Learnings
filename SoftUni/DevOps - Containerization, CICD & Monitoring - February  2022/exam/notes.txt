@@ -1,0 +1,64 @@
+Steps taken doing exam:
+
+    !!! IP Address is different from one in the exam description
+    because using linux host for virtaulbox which didn't let me use diffrent subnet
+
+    Vagrant file order is not in 1..n order, because wanted to start 
+    the monitoring service first to ensure that will take some 
+    readings while another machines are loading.
+
+    For quick startup and not waiting for virtualbox to start them one by one.
+    grep config.vm.define Vagrantfile | awk -F'"' '{print $2}' | xargs -P3 -I {} vagrant up {}
+
+    Setup vagrant:
+        Base image: ubuntu 20.04
+        Specs:
+            Memory: 4g
+            Cpus: 4 cores
+        Hosts: pipelines.do1.exam, docker.do1.exam, monitoring.do1.exam
+        Forwarded ports:
+            Jenkins:
+                Jenkins UI - 8081
+            Docker:
+                Application FE: 8080
+            Monitoring:
+                Grafana - 8082 
+    
+    Jenkins vm setup:
+        Update hosts
+
+        Install node_extractor
+        Install jenkins, java
+        Start setup-jenkins 
+        Setup ssh access to docker vm (manually)
+            su jenkins (pass: pass1)
+            ssh-keygen -t rsa -b 2048
+            cat ~/.ssh/id_rsa.pub
+            exit
+            vagrant ssh docker
+            echo '<key>' >> ~/.ssh/authorized_keys
+            exit
+        Setup pipeline from Jenkins file in shared-files/jenkins/pipelines/
+
+    Docker vm setup:
+        Update hosts
+
+        Install node_extractor
+        Install docker engine, client, docker-compose, java
+        Create docker network "app-net"
+        Start docker-compose for gitea
+        Configure gitea
+
+    Monitoring vm setup:
+        Chosen solution: Prometheuos + Grafana
+
+        Update hosts
+
+        Install node_extractor
+        Install prometheuos
+        Install grafana
+        Start systemctl services
+        Add initial grafana user { user: exam, pass: exam }
+        Update grafana provisioning
+            Add datasource
+            Add dashboards

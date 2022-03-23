@@ -1,0 +1,7 @@
+Base image: aspyatkin/ubuntu-18.04-server
+
+To run all mashines in parallel:
+grep config.vm.define Vagrantfile | awk -F'"' '{print $2}' | xargs -P3 -I {} vagrant up {}
+
+docker hub
+8eb76f1c-87bc-4b78-a391-434a048d0bf1

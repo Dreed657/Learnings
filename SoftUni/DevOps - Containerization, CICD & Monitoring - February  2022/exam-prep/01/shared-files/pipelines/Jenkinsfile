@@ -1,0 +1,45 @@
+pipeline 
+{
+    agent {
+        label 'vm102'
+    }
+
+    stages 
+    {
+        stage('Clone') 
+        {
+            steps 
+            {
+                git branch: 'main', url: 'http://vm102:3000/dreed/exam-re'
+            }
+        }
+        stage('Build')
+        {
+            steps
+            {
+                sh 'cd consumer; docker image build -t img-consumer .'
+                sh 'cd producer; docker image build -t img-producer .'
+                sh 'cd storage; docker image build -t img-storage .'
+            }
+        }
+        stage('Run')
+        {
+            steps
+            {
+                sh 'docker container rm -f dob-storage || true'
+                sh 'docker container run -d --name dob-storage --net app-net -e MYSQL_ROOT_PASSWORD=Exam-2021 img-storage'
+
+                sh 'docker container rm -f dob-producer || true'
+                sh 'docker container run -d --name dob-producer --net app-net img-producer'
+
+                sh 'docker container rm -f dob-consumer || true'
+                sh 'docker container run -d --name dob-consumer --net app-net -p 8080:5000 img-consumer'
+            }
+        }
+    }
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
