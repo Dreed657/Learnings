@@ -1,0 +1,41 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    
+  config.ssh.insert_key = false
+
+  config.vm.define "ans" do |ans|
+    ans.vm.box = "shekeriev/centos-stream-8"
+    ans.vm.hostname = "ans.do2.lab"
+    ans.vm.network "private_network", ip: "192.168.99.99"
+    ans.vm.synced_folder "vagrant/", "/vagrant"
+  end
+
+  config.vm.define "web1" do |web1|
+    web1.vm.box = "shekeriev/centos-stream-8"
+    web1.vm.hostname = "web1.do2.lab"
+    web1.vm.network "private_network", ip: "192.168.99.100"
+    web1.vm.network "forwarded_port", guest: 80, host: 8080
+  end
+
+  config.vm.define "web2" do |web2|
+    web2.vm.box = "shekeriev/debian-11"
+    web2.vm.hostname = "web2.do2.lab"
+    web2.vm.network "private_network", ip: "192.168.99.105"
+    web2.vm.network "forwarded_port", guest: 80, host: 8081
+  end
+  
+  config.vm.define "db" do |db|
+    db.vm.box = "shekeriev/centos-stream-8"
+    db.vm.hostname = "db.do2.lab"
+    db.vm.network "private_network", ip: "192.168.99.101"
+  end
+
+  config.vm.define "clnt" do |clnt|
+    clnt.vm.box = "shekeriev/centos-stream-8"
+    clnt.vm.hostname = "clnt.do2.lab"
+    clnt.vm.network "private_network", ip: "192.168.99.102"
+  end
+ 
+end
