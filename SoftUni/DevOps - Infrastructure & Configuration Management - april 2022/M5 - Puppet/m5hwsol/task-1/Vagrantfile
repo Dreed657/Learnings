@@ -1,0 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    
+  config.ssh.insert_key = false
+  
+  $puppet = <<PUPPET
+    sudo dnf install -y https://yum.puppet.com/puppet7-release-el-8.noarch.rpm
+    sudo dnf install -y puppet
+PUPPET
+
+  $modules = <<MODULES
+    puppet module install puppetlabs-docker
+    sudo cp -vR ~/.puppetlabs/etc/code/modules/ /etc/puppetlabs/code/
+MODULES
+
+  config.vm.define "docker" do |docker|
+    docker.vm.box = "shekeriev/centos-stream-8"
+    docker.vm.hostname = "docker.do2.lab"
+    docker.vm.network "private_network", ip: "192.168.99.100"
+    docker.vm.provision "shell", inline: $puppet, privileged: false
+    docker.vm.provision "shell", inline: $modules, privileged: false
+    docker.vm.provision "puppet"
+  end
+end

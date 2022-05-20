@@ -1,0 +1,17 @@
+---
+- hosts: webservers
+  become: false
+
+  tasks:
+    - name: Ask for the hostname on Red Hat machines
+      shell: hostname
+      register: rslt
+      when: ansible_os_family == "RedHat"
+
+    - name: Ask for the free memory on Debian machines
+      shell: free -m
+      register: rslt
+      when: ansible_os_family == "Debian"
+
+    - name: Show the result
+      debug: var=rslt

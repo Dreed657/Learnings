@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    
+  config.ssh.insert_key = false
+
+  config.vm.define "docker" do |docker|
+    docker.vm.box = "shekeriev/centos-stream-8"
+    docker.vm.hostname = "docker.do2.lab"
+    docker.vm.network "private_network", ip: "192.168.99.100"
+    docker.vm.provision "chef_solo" do |chef|
+        chef.product = "chef-workstation"
+        chef.arguments = "--chef-license accept"
+        chef.run_list = [
+        "recipe[hwdocker::install_docker]", 
+        "recipe[hwdocker::run_nginx]"
+        ]
+    end
+  end
+end
