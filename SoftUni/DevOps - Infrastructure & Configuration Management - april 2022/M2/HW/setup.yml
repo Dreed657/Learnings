@@ -1,9 +1,0 @@
-- hosts: webservers
-  become: true
-  roles:
-    - geerlingguy.docker
-
-- hosts: dbservers
-  become: true
-  roles:
-    - geerlingguy.mysql
